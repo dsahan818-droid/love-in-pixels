@@ -1,0 +1,2648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Kawya ♡</title>
+
+<style>
+
+/* =========================================================
+   BASIC
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        "Segoe Print",
+        "Bradley Hand",
+        "Comic Sans MS",
+        cursive;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff5f8,
+            #fdf8ff,
+            #fffaf3
+        );
+
+    color: #5c4a54;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   SOFT BACKGROUND
+========================================================= */
+
+.background-glow {
+
+    position: fixed;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    filter: blur(45px);
+
+    opacity: 0.28;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation:
+        softFloat 7s ease-in-out infinite;
+}
+
+
+.glow-one {
+
+    top: -70px;
+    left: -70px;
+
+    background: #ffd6e5;
+}
+
+
+.glow-two {
+
+    bottom: -80px;
+    right: -70px;
+
+    background: #e8d7ff;
+
+    animation-delay: 2s;
+}
+
+
+@keyframes softFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(10px, -15px);
+    }
+
+}
+
+
+/* =========================================================
+   FLOATING DECORATIONS
+========================================================= */
+
+.decor {
+
+    position: fixed;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    opacity: 0.58;
+
+    animation:
+        floatingDecoration 4.5s
+        ease-in-out infinite;
+}
+
+
+.decor-calendar {
+
+    top: 11%;
+    left: 7%;
+
+    font-size: 35px;
+}
+
+
+.decor-flower {
+
+    top: 20%;
+    right: 7%;
+
+    font-size: 30px;
+
+    animation-delay: 1s;
+}
+
+
+.decor-heart {
+
+    bottom: 18%;
+    left: 7%;
+
+    font-size: 29px;
+
+    animation-delay: 2s;
+}
+
+
+.decor-star {
+
+    bottom: 11%;
+    right: 8%;
+
+    font-size: 27px;
+
+    animation-delay: 1.5s;
+}
+
+
+@keyframes floatingDecoration {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-4deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-9px)
+            rotate(4deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.page {
+
+    position: relative;
+
+    z-index: 1;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    padding:
+        25px
+        14px
+        35px;
+}
+
+
+.container {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+
+    animation:
+        fadeDown 0.8s ease;
+}
+
+
+.header-heart {
+
+    display: inline-block;
+
+    font-size: 23px;
+
+    color: #d78ba8;
+
+    animation:
+        heartbeat 1.8s
+        ease-in-out infinite;
+}
+
+
+.header h1 {
+
+    margin-top: 3px;
+
+    font-size: 25px;
+
+    color: #624e59;
+
+    font-weight: 700;
+}
+
+
+.header p {
+
+    margin-top: 5px;
+
+    font-size: 11px;
+
+    color: #9a828d;
+
+    line-height: 1.7;
+}
+
+
+@keyframes fadeDown {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-12px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.16);
+
+    }
+
+}
+
+
+/* =========================================================
+   CAKE CARD
+========================================================= */
+
+.cake-card {
+
+    position: relative;
+
+    margin-top: 18px;
+
+    padding:
+        24px
+        18px
+        22px;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    border-radius: 27px;
+
+    box-shadow:
+        0 14px 36px
+        rgba(120, 82, 104, 0.12);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.95);
+
+    overflow: hidden;
+
+    animation:
+        cakeCardAppear 0.9s ease;
+}
+
+
+@keyframes cakeCardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   LITTLE TOP DECORATION
+========================================================= */
+
+.cake-top-text {
+
+    font-size: 10px;
+
+    letter-spacing: 1.4px;
+
+    color: #b28c9e;
+
+    margin-bottom: 8px;
+}
+
+
+.cake-title {
+
+    font-size: 20px;
+
+    color: #624d59;
+
+    margin-bottom: 3px;
+}
+
+
+.cake-subtitle {
+
+    font-size: 10px;
+
+    color: #a38b95;
+
+    margin-bottom: 16px;
+}
+
+
+/* =========================================================
+   CAKE STAGE
+========================================================= */
+
+.cake-stage {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 300px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   CAKE SHADOW
+========================================================= */
+
+.cake-shadow {
+
+    position: absolute;
+
+    bottom: 14px;
+
+    left: 50%;
+
+    width: 285px;
+
+    height: 25px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(166, 125, 143, 0.12);
+
+    filter: blur(5px);
+
+    animation:
+        shadowPulse 3s
+        ease-in-out infinite;
+}
+
+
+@keyframes shadowPulse {
+
+    0%,
+    100% {
+        transform:
+            translateX(-50%)
+            scaleX(1);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            scaleX(1.04);
+    }
+
+}
+
+
+/* =========================================================
+   CAKE
+========================================================= */
+
+.cake {
+
+    position: relative;
+
+    width: 270px;
+
+    height: 190px;
+
+    margin-bottom: 20px;
+
+    animation:
+        cakeFloat 4s
+        ease-in-out infinite;
+}
+
+
+@keyframes cakeFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-4px);
+
+    }
+
+}
+
+
+/* =========================================================
+   CAKE TOP
+========================================================= */
+
+.cake-top {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 45px;
+
+    width: 235px;
+
+    height: 55px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50% 50% 18px 18px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff0f5,
+            #f9dce8
+        );
+
+    box-shadow:
+        inset 0 -8px 0
+        rgba(219, 151, 177, 0.15),
+        0 8px 18px
+        rgba(170, 111, 137, 0.13);
+
+    z-index: 4;
+}
+
+
+/* =========================================================
+   CAKE FROSTING
+========================================================= */
+
+.frosting {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 84px;
+
+    width: 245px;
+
+    height: 38px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        18px 18px 25px 25px;
+
+    background:
+        #fff6fa;
+
+    z-index: 6;
+
+    box-shadow:
+        0 4px 10px
+        rgba(191, 128, 153, 0.08);
+}
+
+
+.frost-drip {
+
+    position: absolute;
+
+    width: 17px;
+
+    height: 29px;
+
+    border-radius:
+        0 0 12px 12px;
+
+    background:
+        #fff6fa;
+}
+
+
+.drip-one {
+
+    left: 28px;
+
+    top: 20px;
+}
+
+
+.drip-two {
+
+    left: 82px;
+
+    top: 18px;
+
+    height: 35px;
+}
+
+
+.drip-three {
+
+    right: 74px;
+
+    top: 19px;
+
+    height: 31px;
+}
+
+
+.drip-four {
+
+    right: 26px;
+
+    top: 18px;
+
+    height: 27px;
+}
+
+
+/* =========================================================
+   CAKE BODY
+========================================================= */
+
+.cake-body {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 101px;
+
+    width: 245px;
+
+    height: 83px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        8px 8px 22px 22px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8d7e3,
+            #efc4d4
+        );
+
+    box-shadow:
+        inset 0 -10px 0
+        rgba(201, 132, 160, 0.10),
+        0 8px 17px
+        rgba(170, 111, 137, 0.14);
+
+    z-index: 3;
+}
+
+
+/* cake layers */
+
+.cake-layer {
+
+    position: absolute;
+
+    left: 50%;
+
+    width: 228px;
+
+    height: 9px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 246, 250, 0.68);
+}
+
+
+.layer-one {
+
+    top: 23px;
+}
+
+
+.layer-two {
+
+    top: 48px;
+}
+
+
+/* =========================================================
+   LITTLE CAKE DECORATIONS
+========================================================= */
+
+.cake-dot {
+
+    position: absolute;
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #d79ab4;
+
+    z-index: 8;
+
+    animation:
+        decorationTwinkle 2.5s
+        ease-in-out infinite;
+}
+
+
+.dot-one {
+
+    left: 67px;
+
+    top: 126px;
+}
+
+
+.dot-two {
+
+    left: 110px;
+
+    top: 150px;
+
+    animation-delay: .5s;
+}
+
+
+.dot-three {
+
+    right: 82px;
+
+    top: 131px;
+
+    animation-delay: 1s;
+}
+
+
+.dot-four {
+
+    right: 54px;
+
+    top: 153px;
+
+    animation-delay: 1.4s;
+}
+
+
+@keyframes decorationTwinkle {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+        opacity:
+            .75;
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.35);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================================================
+   NUMBER 23
+========================================================= */
+
+.age-number {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 60px;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 8;
+
+    color: #c77f9d;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 2px 8px
+        rgba(197, 125, 154, 0.18);
+}
+
+
+/* =========================================================
+   CANDLE AREA
+========================================================= */
+
+.candle-area {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    width: 220px;
+
+    height: 80px;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 10;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    gap: 3px;
+}
+
+
+/* =========================================================
+   REUSABLE CANDLE
+========================================================= */
+
+.candle {
+
+    position: relative;
+
+    width: 6px;
+
+    height: 40px;
+
+    border-radius:
+        5px 5px 3px 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #dca8bc,
+            #f8dce7,
+            #dca8bc
+        );
+
+    box-shadow:
+        0 2px 5px
+        rgba(180, 119, 143, 0.16);
+
+    transform-origin:
+        bottom center;
+
+    animation:
+        candleSway 3s
+        ease-in-out infinite;
+}
+
+
+.candle:nth-child(3n) {
+
+    animation-delay:
+        .3s;
+}
+
+
+.candle:nth-child(4n) {
+
+    animation-delay:
+        .7s;
+}
+
+
+.candle:nth-child(5n) {
+
+    animation-delay:
+        1.1s;
+}
+
+
+@keyframes candleSway {
+
+    0%,
+    100% {
+
+        transform:
+            rotate(-1deg);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(1deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   WICK
+========================================================= */
+
+.wick {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: -5px;
+
+    width: 2px;
+
+    height: 7px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        #6e5a60;
+
+    border-radius: 2px;
+}
+
+
+/* =========================================================
+   FLAME
+========================================================= */
+
+.flame {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: -24px;
+
+    width: 11px;
+
+    height: 17px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50% 50% 50% 50%;
+
+    background:
+        radial-gradient(
+            circle at 50% 70%,
+            #fff9c9 0 25%,
+            #ffd77b 28% 58%,
+            #f2a36d 65%
+        );
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            rgba(255, 184, 93, 0.65)
+        );
+
+    animation:
+        flameDance .8s
+        ease-in-out infinite alternate;
+
+    transform-origin:
+        bottom center;
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+}
+
+
+@keyframes flameDance {
+
+    from {
+
+        transform:
+            translateX(-50%)
+            rotate(-4deg)
+            scaleY(1);
+
+    }
+
+    to {
+
+        transform:
+            translateX(-50%)
+            rotate(4deg)
+            scaleY(1.08);
+
+    }
+
+}
+
+
+/* extinguished candle */
+
+.candle.off {
+
+    animation:
+        candleOff .4s ease forwards;
+}
+
+
+.candle.off .flame {
+
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        translateY(8px)
+        scale(0);
+}
+
+
+@keyframes candleOff {
+
+    to {
+
+        opacity:
+            .72;
+
+    }
+
+}
+
+
+/* =========================================================
+   BLOW SYSTEM
+========================================================= */
+
+.blow-box {
+
+    margin-top: 3px;
+
+    padding:
+        12px
+        14px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8fb,
+            #faf5ff
+        );
+
+    border:
+        1px solid
+        #f1dce5;
+
+    box-shadow:
+        0 6px 18px
+        rgba(170, 120, 145, 0.08);
+}
+
+
+.blow-status {
+
+    font-size: 11px;
+
+    color: #806d76;
+
+    line-height: 1.7;
+
+    min-height: 20px;
+}
+
+
+.blow-meter {
+
+    width: 100%;
+
+    max-width: 250px;
+
+    height: 5px;
+
+    margin:
+        8px auto 0;
+
+    border-radius: 10px;
+
+    background:
+        #f0e4e9;
+
+    overflow: hidden;
+}
+
+
+.blow-meter-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #efb3c9,
+            #cdb0ed
+        );
+
+    transition:
+        width .15s ease;
+}
+
+
+/* =========================================================
+   BLOW BUTTON FALLBACK
+========================================================= */
+
+.wave-button {
+
+    margin-top: 9px;
+
+    border: none;
+
+    background:
+        transparent;
+
+    color:
+        #b1748d;
+
+    font-family:
+        inherit;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    opacity: .75;
+
+    transition:
+        transform .2s ease,
+        opacity .2s ease;
+}
+
+
+.wave-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   BIRTHDAY MESSAGE
+========================================================= */
+
+.birthday-message {
+
+    margin-top: 17px;
+
+    padding:
+        12px
+        14px;
+
+    border-radius: 18px;
+
+    background:
+        #fff5f9;
+
+    color: #886d79;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+    animation:
+        softAppear .8s ease;
+}
+
+
+.birthday-message strong {
+
+    color:
+        #b36d88;
+}
+
+
+@keyframes softAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   ALL CANDLES BLOWN
+========================================================= */
+
+.cake-card.complete .birthday-message {
+
+    animation:
+        celebrationAppear .9s ease;
+}
+
+
+@keyframes celebrationAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(.92)
+            translateY(10px);
+
+    }
+
+    70% {
+
+        transform:
+            scale(1.03);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   SECRET AREA
+========================================================= */
+
+.secret-area {
+
+    margin-top: 20px;
+
+    padding:
+        14px
+        10px
+        8px;
+
+    text-align: center;
+}
+
+
+/* hint */
+
+.secret-hint {
+
+    font-size: 9px;
+
+    color: #aa929d;
+
+    line-height: 1.7;
+
+    opacity: .8;
+
+    animation:
+        hintPulse 3s
+        ease-in-out infinite;
+}
+
+
+@keyframes hintPulse {
+
+    0%,
+    100% {
+
+        opacity: .55;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECRET BUTTON
+========================================================= */
+
+.secret-button {
+
+    position: relative;
+
+    width: 64px;
+
+    height: 64px;
+
+    margin-top: 9px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    -webkit-tap-highlight-color: transparent;
+
+    outline: none;
+}
+
+
+.secret-glow {
+
+    position: absolute;
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(237, 186, 209, .18);
+
+    filter:
+        blur(7px);
+
+    transition:
+        transform .5s ease,
+        opacity .5s ease;
+}
+
+
+.secret-core {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 43px;
+
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #f4eaff
+        );
+
+    border:
+        1px solid
+        rgba(216, 158, 183, .35);
+
+    color:
+        #c17c9b;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 7px 18px
+        rgba(192, 123, 153, .15);
+
+    transition:
+        transform .5s
+        cubic-bezier(.22,.61,.36,1),
+        box-shadow .5s ease;
+}
+
+
+.secret-spark {
+
+    position: absolute;
+
+    z-index: 1;
+
+    color:
+        #d19bb5;
+
+    opacity: 0;
+
+    transition:
+        opacity .4s ease,
+        transform .7s
+        cubic-bezier(.22,.61,.36,1);
+}
+
+
+.secret-spark.one {
+
+    left: 8px;
+    top: 12px;
+}
+
+
+.secret-spark.two {
+
+    right: 8px;
+    top: 14px;
+}
+
+
+.secret-spark.three {
+
+    right: 15px;
+    bottom: 7px;
+}
+
+
+.secret-button:hover .secret-core {
+
+    transform:
+        scale(1.12)
+        rotate(-6deg);
+
+    box-shadow:
+        0 10px 25px
+        rgba(192, 123, 153, .27),
+        0 0 20px
+        rgba(240, 181, 208, .28);
+}
+
+
+.secret-button:hover .secret-glow {
+
+    transform:
+        scale(1.35);
+
+    opacity: .85;
+}
+
+
+.secret-button:hover .secret-spark {
+
+    opacity: 1;
+}
+
+
+.secret-button:hover .spark-one {
+
+    transform:
+        translate(-8px, -8px);
+}
+
+
+.secret-button:hover .spark-two {
+
+    transform:
+        translate(8px, -7px);
+}
+
+
+.secret-button:hover .spark-three {
+
+    transform:
+        translate(7px, 7px);
+}
+
+
+.secret-button:active .secret-core {
+
+    transform:
+        scale(.9);
+}
+
+
+/* =========================================================
+   SECRET OPEN ANIMATION
+========================================================= */
+
+.secret-button.opening {
+
+    pointer-events: none;
+
+    animation:
+        secretOpen .75s
+        ease forwards;
+}
+
+
+.secret-button.opening .secret-core {
+
+    animation:
+        secretCoreOpen .75s
+        ease forwards;
+}
+
+
+@keyframes secretOpen {
+
+    0% {
+
+        transform:
+            scale(1);
+
+    }
+
+    45% {
+
+        transform:
+            scale(1.2);
+
+    }
+
+    100% {
+
+        transform:
+            scale(.2);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+@keyframes secretCoreOpen {
+
+    0% {
+
+        box-shadow:
+            0 7px 18px
+            rgba(192, 123, 153, .15);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 0 18px
+            rgba(238, 181, 208, .12),
+            0 0 40px
+            rgba(238, 181, 208, .38);
+
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 0 45px
+            rgba(238, 181, 208, 0);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .page {
+
+        padding:
+            21px
+            12px
+            30px;
+    }
+
+
+    .container {
+
+        max-width: 430px;
+    }
+
+
+    .header h1 {
+
+        font-size: 23px;
+    }
+
+
+    .cake-card {
+
+        padding:
+            21px
+            13px
+            19px;
+
+        border-radius: 24px;
+    }
+
+
+    .cake-stage {
+
+        height: 280px;
+    }
+
+
+    .cake {
+
+        transform:
+            scale(.92);
+
+        transform-origin:
+            bottom center;
+    }
+
+
+    .cake:hover {
+
+        transform:
+            scale(.94)
+            translateY(-3px);
+    }
+
+
+    .decor-calendar {
+
+        left: 2%;
+
+        font-size: 28px;
+    }
+
+
+    .decor-flower {
+
+        right: 2%;
+
+        font-size: 25px;
+    }
+
+
+    .decor-heart {
+
+        left: 2%;
+
+        font-size: 24px;
+    }
+
+
+    .decor-star {
+
+        right: 2%;
+
+        font-size: 23px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     SOFT BACKGROUND
+========================================================= -->
+
+<div class="background-glow glow-one"></div>
+
+<div class="background-glow glow-two"></div>
+
+
+<!-- =========================================================
+     DECORATIONS
+========================================================= -->
+
+<div class="decor decor-calendar">
+    🗓️
+</div>
+
+<div class="decor decor-flower">
+    🌸
+</div>
+
+<div class="decor decor-heart">
+    🤍
+</div>
+
+<div class="decor decor-star">
+    ✨
+</div>
+
+
+<!-- =========================================================
+     PAGE
+========================================================= -->
+
+<div class="page">
+
+<div class="container">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <div class="header">
+
+        <div class="header-heart">
+            ♡
+        </div>
+
+        <h1>
+            Happy Birthday, Kawya
+        </h1>
+
+        <p>
+            Today is a little more special because it's your day. ♡
+        </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         CAKE CARD
+    ====================================================== -->
+
+    <div
+        class="cake-card"
+        id="cakeCard"
+    >
+
+
+        <div class="cake-top-text">
+            A LITTLE BIRTHDAY SURPRISE
+        </div>
+
+
+        <div class="cake-title">
+            Make a wish, Kawya ♡
+        </div>
+
+
+        <div class="cake-subtitle">
+            23 little candles are waiting for you...
+        </div>
+
+
+        <!-- =================================================
+             CAKE
+        ================================================== -->
+
+        <div class="cake-stage">
+
+
+            <div class="cake-shadow"></div>
+
+
+            <div class="cake">
+
+
+                <!-- CANDLES ARE CREATED BY JAVASCRIPT -->
+
+                <div
+                    class="candle-area"
+                    id="candleArea"
+                ></div>
+
+
+                <!-- CAKE TOP -->
+
+                <div class="cake-top"></div>
+
+
+                <!-- AGE -->
+
+                <div class="age-number">
+                    23
+                </div>
+
+
+                <!-- FROSTING -->
+
+                <div class="frosting">
+
+                    <div class="frost-drip drip-one"></div>
+
+                    <div class="frost-drip drip-two"></div>
+
+                    <div class="frost-drip drip-three"></div>
+
+                    <div class="frost-drip drip-four"></div>
+
+                </div>
+
+
+                <!-- BODY -->
+
+                <div class="cake-body">
+
+                    <div class="cake-layer layer-one"></div>
+
+                    <div class="cake-layer layer-two"></div>
+
+                </div>
+
+
+                <!-- DECORATIONS -->
+
+                <div class="cake-dot dot-one"></div>
+
+                <div class="cake-dot dot-two"></div>
+
+                <div class="cake-dot dot-three"></div>
+
+                <div class="cake-dot dot-four"></div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BLOW SYSTEM
+        ================================================== -->
+
+        <div class="blow-box">
+
+
+            <div
+                class="blow-status"
+                id="blowStatus"
+            >
+                🌬️ Take a little breath... then blow toward the microphone.
+            </div>
+
+
+            <div class="blow-meter">
+
+                <div
+                    class="blow-meter-fill"
+                    id="blowMeter"
+                ></div>
+
+            </div>
+
+
+            <button
+                class="wave-button"
+                id="waveButton"
+                onclick="manualBlow()"
+            >
+                ✨ Or gently tap here if your microphone isn't available
+            </button>
+
+
+        </div>
+
+
+        <!-- =================================================
+             MESSAGE
+        ================================================== -->
+
+        <div class="birthday-message">
+
+            🎂
+            <strong>
+                Happy 23rd Birthday, Kawya!
+            </strong>
+
+            <br>
+
+            Make your wish first...
+            then let all those little flames disappear. ♡
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         SECRET AREA
+    ====================================================== -->
+
+    <div class="secret-area">
+
+
+        <div class="secret-hint">
+
+            Psst... there might be something hidden here.
+            <br>
+            Maybe one little ♡ isn't just decoration...
+
+        </div>
+
+
+        <!-- =================================================
+             SECRET BUTTON
+        ================================================== -->
+
+        <button
+            class="secret-button"
+            id="secretButton"
+            onclick="openSecret()"
+            aria-label="Secret surprise"
+        >
+
+            <span class="secret-glow"></span>
+
+
+            <span class="secret-core">
+                ♡
+            </span>
+
+
+            <span class="secret-spark one">
+                ✦
+            </span>
+
+
+            <span class="secret-spark two">
+                ✧
+            </span>
+
+
+            <span class="secret-spark three">
+                ·
+            </span>
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   CANDLE SYSTEM
+========================================================= */
+
+/*
+   IMPORTANT:
+
+   This system is reusable.
+
+   Change this number later if you want
+   a different number of candles.
+*/
+
+const CANDLE_COUNT = 23;
+
+let blownCandles = 0;
+
+let microphoneStarted = false;
+
+let audioContext = null;
+
+let analyser = null;
+
+let microphoneStream = null;
+
+let blowingCooldown = false;
+
+
+/* =========================================================
+   CREATE CANDLES
+========================================================= */
+
+function createCandles() {
+
+    const candleArea =
+        document.getElementById("candleArea");
+
+    candleArea.innerHTML = "";
+
+
+    for (
+        let i = 0;
+        i < CANDLE_COUNT;
+        i++
+    ) {
+
+        const candle =
+            document.createElement("div");
+
+        candle.className =
+            "candle";
+
+
+        const wick =
+            document.createElement("div");
+
+        wick.className =
+            "wick";
+
+
+        const flame =
+            document.createElement("div");
+
+        flame.className =
+            "flame";
+
+
+        candle.appendChild(wick);
+
+        candle.appendChild(flame);
+
+        candleArea.appendChild(candle);
+
+    }
+
+}
+
+
+/* =========================================================
+   BLOW ONE CANDLE
+========================================================= */
+
+function blowNextCandle() {
+
+    const candles =
+        document.querySelectorAll(".candle:not(.off)");
+
+
+    if (candles.length === 0) {
+
+        finishBirthday();
+
+        return;
+
+    }
+
+
+    const candle =
+        candles[candles.length - 1];
+
+
+    candle.classList.add("off");
+
+
+    blownCandles++;
+
+
+    updateStatus();
+
+
+    if (
+        blownCandles >=
+        CANDLE_COUNT
+    ) {
+
+        setTimeout(
+            finishBirthday,
+            500
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   UPDATE STATUS
+========================================================= */
+
+function updateStatus() {
+
+    const status =
+        document.getElementById("blowStatus");
+
+
+    const meter =
+        document.getElementById("blowMeter");
+
+
+    const percentage =
+        Math.round(
+            (blownCandles /
+                CANDLE_COUNT) *
+            100
+        );
+
+
+    meter.style.width =
+        percentage + "%";
+
+
+    if (
+        blownCandles === 0
+    ) {
+
+        status.textContent =
+            "🌬️ Take a little breath... then blow toward the microphone.";
+
+    }
+
+    else if (
+        blownCandles <
+        CANDLE_COUNT
+    ) {
+
+        status.textContent =
+            "✨ " +
+            (CANDLE_COUNT - blownCandles) +
+            " little flames are still glowing...";
+
+    }
+
+}
+
+
+/* =========================================================
+   FINISH
+========================================================= */
+
+function finishBirthday() {
+
+    const card =
+        document.getElementById("cakeCard");
+
+
+    card.classList.add("complete");
+
+
+    document.getElementById(
+        "blowStatus"
+    ).textContent =
+        "🎉 You did it! Make your birthday wish, Kawya. ♡";
+
+
+    document.getElementById(
+        "blowMeter"
+    ).style.width =
+        "100%";
+
+
+    createCelebration();
+
+}
+
+
+/* =========================================================
+   MICROPHONE SYSTEM
+========================================================= */
+
+async function startMicrophone() {
+
+    if (
+        microphoneStarted
+    ) {
+        return;
+    }
+
+
+    if (
+        !navigator.mediaDevices ||
+        !navigator.mediaDevices.getUserMedia
+    ) {
+
+        showMicrophoneFallback();
+
+        return;
+
+    }
+
+
+    try {
+
+        microphoneStream =
+            await navigator.mediaDevices.getUserMedia({
+                audio: true
+            });
+
+
+        audioContext =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+
+        analyser =
+            audioContext.createAnalyser();
+
+
+        analyser.fftSize = 512;
+
+        analyser.smoothingTimeConstant =
+            0.65;
+
+
+        const microphone =
+            audioContext.createMediaStreamSource(
+                microphoneStream
+            );
+
+
+        microphone.connect(
+            analyser
+        );
+
+
+        microphoneStarted =
+            true;
+
+
+        document.getElementById(
+            "blowStatus"
+        ).textContent =
+            "🎤 Microphone ready — gently blow toward it!";
+
+
+        listenForBlow();
+
+    }
+
+    catch (error) {
+
+        showMicrophoneFallback();
+
+    }
+
+}
+
+
+/* =========================================================
+   LISTEN FOR BLOW
+========================================================= */
+
+function listenForBlow() {
+
+    if (!analyser) {
+        return;
+    }
+
+
+    const data =
+        new Uint8Array(
+            analyser.fftSize
+        );
+
+
+    function checkSound() {
+
+        analyser.getByteTimeDomainData(
+            data
+        );
+
+
+        let total = 0;
+
+
+        for (
+            let i = 0;
+            i < data.length;
+            i++
+        ) {
+
+            const value =
+                (data[i] - 128) / 128;
+
+            total +=
+                value * value;
+
+        }
+
+
+        const volume =
+            Math.sqrt(
+                total /
+                data.length
+            );
+
+
+        const strength =
+            Math.min(
+                100,
+                volume * 700
+            );
+
+
+        document.getElementById(
+            "blowMeter"
+        ).style.width =
+            Math.min(
+                100,
+                strength
+            ) + "%";
+
+
+        /*
+           A sustained louder sound
+           counts as a blow.
+        */
+
+        if (
+            strength > 18 &&
+            !blowingCooldown
+        ) {
+
+            blowingCooldown = true;
+
+            blowNextCandle();
+
+
+            setTimeout(
+                () => {
+
+                    blowingCooldown =
+                        false;
+
+                },
+                260
+            );
+
+        }
+
+
+        if (
+            blownCandles <
+            CANDLE_COUNT
+        ) {
+
+            requestAnimationFrame(
+                checkSound
+            );
+
+        }
+
+    }
+
+
+    checkSound();
+
+}
+
+
+/* =========================================================
+   MICROPHONE FALLBACK
+========================================================= */
+
+function showMicrophoneFallback() {
+
+    document.getElementById(
+        "blowStatus"
+    ).textContent =
+        "✨ Your microphone isn't available. You can gently tap the little hint below instead. ♡";
+
+}
+
+
+/* =========================================================
+   MANUAL BLOW FALLBACK
+========================================================= */
+
+function manualBlow() {
+
+    if (
+        blownCandles >=
+        CANDLE_COUNT
+    ) {
+        return;
+    }
+
+
+    /*
+       Each tap represents
+       another gentle breath.
+    */
+
+    blowNextCandle();
+
+}
+
+
+/* =========================================================
+   START MICROPHONE WHEN USER INTERACTS
+========================================================= */
+
+document.addEventListener(
+    "pointerdown",
+    function() {
+
+        if (
+            !microphoneStarted &&
+            blownCandles <
+            CANDLE_COUNT
+        ) {
+
+            startMicrophone();
+
+        }
+
+    },
+    {
+        once: true
+    }
+);
+
+
+/* =========================================================
+   CELEBRATION
+========================================================= */
+
+function createCelebration() {
+
+    const symbols = [
+        "♡",
+        "✦",
+        "✧",
+        "🌸",
+        "✨",
+        "♡",
+        "·"
+    ];
+
+
+    for (
+        let i = 0;
+        i < 18;
+        i++
+    ) {
+
+        const item =
+            document.createElement("div");
+
+        item.textContent =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+
+        item.style.position =
+            "fixed";
+
+        item.style.left =
+            (50 +
+                (Math.random() - .5) *
+                60) + "%";
+
+        item.style.top =
+            "48%";
+
+        item.style.zIndex =
+            "20";
+
+        item.style.pointerEvents =
+            "none";
+
+        item.style.fontSize =
+            (10 +
+                Math.random() *
+                13) + "px";
+
+        item.style.color =
+            "#d28eaa";
+
+
+        document.body.appendChild(
+            item
+        );
+
+
+        const x =
+            (Math.random() - .5) *
+            240;
+
+        const y =
+            -(80 +
+                Math.random() *
+                180);
+
+
+        item.animate(
+            [
+                {
+                    transform:
+                        "translate(-50%,0) scale(.7)",
+                    opacity: 0
+                },
+                {
+                    transform:
+                        "translate(-50%,-30px) scale(1)",
+                    opacity: 1
+                },
+                {
+                    transform:
+                        `translate(calc(-50% + ${x}px), ${y}px) scale(.7)`,
+                    opacity: 0
+                }
+            ],
+            {
+                duration:
+                    1500 +
+                    Math.random() *
+                    900,
+
+                easing:
+                    "cubic-bezier(.22,.61,.36,1)"
+            }
+        );
+
+
+        setTimeout(
+            () => {
+
+                item.remove();
+
+            },
+            2600
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   SECRET BUTTON
+========================================================= */
+
+function openSecret() {
+
+    const button =
+        document.getElementById(
+            "secretButton"
+        );
+
+
+    button.classList.add(
+        "opening"
+    );
+
+
+    /*
+       The secret door opens
+       after the cute animation.
+    */
+
+    setTimeout(
+        () => {
+
+            window.location.href =
+                "forever-us.html";
+
+        },
+        750
+    );
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+createCandles();
+
+updateStatus();
+
+</script>
+
+</body>
+
+</html>
