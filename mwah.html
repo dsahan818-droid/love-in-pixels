@@ -70,6 +70,7 @@
             outline-offset: 4px;
         }
 
+
         /* =========================================
            FLOATING BACKGROUND DECORATIONS
         ========================================= */
@@ -137,6 +138,7 @@
                 transform: translateY(-8px) rotate(4deg);
             }
         }
+
 
         /* =========================================
            MAIN LAYOUT
@@ -214,6 +216,7 @@
             }
         }
 
+
         /* =========================================
            GENERAL CARDS
         ========================================= */
@@ -259,6 +262,7 @@
                 transform: translateY(0);
             }
         }
+
 
         /* =========================================
            FIVE-SONG MUSIC BOX
@@ -330,6 +334,7 @@
             margin-bottom: 13px;
         }
 
+
         /* Vinyl record */
 
         .record-wrap {
@@ -382,6 +387,7 @@
             }
         }
 
+
         /* Song information */
 
         .music-track-info {
@@ -408,6 +414,7 @@
             font-size: 10px;
             line-height: 1.6;
         }
+
 
         /* Music progress bar */
 
@@ -446,6 +453,7 @@
             color: #a28994;
             font-size: 9px;
         }
+
 
         /* Music control buttons */
 
@@ -504,6 +512,7 @@
 
             font-size: 16px;
         }
+
 
         /* Song playlist */
 
@@ -594,6 +603,7 @@
             font-size: 10px;
         }
 
+
         /* =========================================
            BIRTHDAY LETTER
         ========================================= */
@@ -661,6 +671,7 @@
                 transform: translateY(-3px);
             }
         }
+
 
         /* =========================================
            PHOTO GALLERY
@@ -762,6 +773,7 @@
             font-size: 10px;
         }
 
+
         /* =========================================
            MEMORY CAPSULE
         ========================================= */
@@ -853,6 +865,7 @@
             line-height: 1.8;
         }
 
+
         /* =========================================
            FINAL BIRTHDAY MESSAGE
         ========================================= */
@@ -932,6 +945,7 @@
             }
         }
 
+
         /* =========================================
            MOBILE RESPONSIVE STYLES
         ========================================= */
@@ -1004,6 +1018,7 @@
                 padding: 8px;
             }
         }
+
 
         /* Respect reduced-motion preferences */
 
@@ -1558,38 +1573,14 @@
            same folder as this HTML file.
         ========================================= */
 
-        const music = document.getElementById(
-            "backgroundMusic"
-        );
-
-        const musicButton = document.getElementById(
-            "musicButton"
-        );
-
-        const musicStatus = document.getElementById(
-            "musicStatus"
-        );
-
-        const musicName = document.getElementById(
-            "musicName"
-        );
-
-        const recordWrap = document.getElementById(
-            "recordWrap"
-        );
-
-        const musicProgressFill = document.getElementById(
-            "musicProgressFill"
-        );
-
-        const musicCurrentTime = document.getElementById(
-            "musicCurrentTime"
-        );
-
-        const musicDuration = document.getElementById(
-            "musicDuration"
-        );
-
+        const music = document.getElementById("backgroundMusic");
+        const musicButton = document.getElementById("musicButton");
+        const musicStatus = document.getElementById("musicStatus");
+        const musicName = document.getElementById("musicName");
+        const recordWrap = document.getElementById("recordWrap");
+        const musicProgressFill = document.getElementById("musicProgressFill");
+        const musicCurrentTime = document.getElementById("musicCurrentTime");
+        const musicDuration = document.getElementById("musicDuration");
 
         const songs = [
             {
@@ -1614,50 +1605,40 @@
             }
         ];
 
-
         let currentSong = 0;
 
 
+        /* Convert seconds into a readable minutes:seconds format. */
         function formatTime(seconds) {
-            if (!Number.isFinite(seconds)) {
+            if (!Number.isFinite(seconds) || seconds < 0) {
                 return "0:00";
             }
 
             const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = Math.floor(seconds % 60);
 
-            const remainingSeconds = Math.floor(
-                seconds % 60
-            );
-
-            const formattedSeconds = String(
-                remainingSeconds
-            ).padStart(2, "0");
+            const formattedSeconds = remainingSeconds < 10
+                ? "0" + remainingSeconds
+                : String(remainingSeconds);
 
             return minutes + ":" + formattedSeconds;
         }
 
 
+        /* Highlight the currently selected song in the playlist. */
         function updatePlaylistHighlight() {
-            const buttons = document.querySelectorAll(
-                ".song-choice"
-            );
+            const songButtons = document.querySelectorAll(".song-choice");
 
-            buttons.forEach(function (button, index) {
-                button.classList.toggle(
-                    "active",
-                    index === currentSong
-                );
+            songButtons.forEach(function (button, index) {
+                button.classList.toggle("active", index === currentSong);
             });
         }
 
 
+        /* Update the player appearance while a song is playing. */
         function updatePlayingDisplay() {
             musicButton.textContent = "Ⅱ";
-
-            musicButton.setAttribute(
-                "aria-label",
-                "Pause music"
-            );
+            musicButton.setAttribute("aria-label", "Pause music");
 
             recordWrap.classList.add("playing");
 
@@ -1666,45 +1647,93 @@
         }
 
 
+        /* Update the player appearance while music is paused. */
         function updatePausedDisplay() {
             musicButton.textContent = "▶";
-
-            musicButton.setAttribute(
-                "aria-label",
-                "Play music"
-            );
+            musicButton.setAttribute("aria-label", "Play music");
 
             recordWrap.classList.remove("playing");
         }
 
 
-        function loadSong(index, shouldPlay) {
-            currentSong =
-                (index + songs.length) % songs.length;
+        /* Explain common audio-loading and playback errors. */
+        function getAudioErrorMessage(playError) {
+            const fileName = songs[currentSong].file;
+            const mediaError = music.error;
 
-            music.src = songs[currentSong].file;
+            if (mediaError) {
+                switch (mediaError.code) {
+                    case 1:
+                        return "Loading was cancelled for " +
+                            fileName +
+                            ". Tap Play to try again. ♡";
+
+                    case 2:
+                        return "Could not download " +
+                            fileName +
+                            ". Check that it is uploaded beside mwah.html. ♡";
+
+                    case 3:
+                        return fileName +
+                            " loaded but could not be decoded. " +
+                            "The audio file may be damaged. ♡";
+
+                    case 4:
+                        return fileName +
+                            " uses an unsupported format. " +
+                            "Please upload a valid MP3 file. ♡";
+
+                    default:
+                        return "There was a problem playing " +
+                            fileName +
+                            ". ♡";
+                }
+            }
+
+            if (playError && playError.name === "NotAllowedError") {
+                return "Tap the Play button to start the music. ♡";
+            }
+
+            return "Could not play " +
+                fileName +
+                ". Check the file name and try opening the MP3 directly. ♡";
+        }
+
+
+        /* Load a song by its position in the playlist. */
+        function loadSong(index, shouldPlay) {
+            currentSong = (index + songs.length) % songs.length;
+
+            /*
+             * Resolve each MP3 from the folder containing
+             * this HTML page.
+             */
+            const audioUrl = new URL(
+                songs[currentSong].file,
+                window.location.href
+            );
+
+            music.src = audioUrl.href;
 
             musicName.textContent =
                 songs[currentSong].title + " ♡";
 
             musicStatus.textContent =
-                "Song " +
-                (currentSong + 1) +
-                " of " +
-                songs.length;
+                "Loading " + songs[currentSong].file + "…";
 
             musicProgressFill.style.width = "0%";
 
             musicCurrentTime.textContent = "0:00";
-
             musicDuration.textContent = "0:00";
 
             updatePlaylistHighlight();
-
             updatePausedDisplay();
 
+            /*
+             * Ask the browser to load this file
+             * and read its metadata.
+             */
             music.load();
-
 
             if (shouldPlay) {
                 playCurrentSong();
@@ -1712,27 +1741,50 @@
         }
 
 
+        /*
+         * Start playback and handle browsers that
+         * return a Promise from play().
+         */
         function playCurrentSong() {
-            music.play()
-                .then(function () {
+            let playResult;
+
+            try {
+                playResult = music.play();
+            } catch (error) {
+                updatePausedDisplay();
+
+                musicStatus.textContent =
+                    getAudioErrorMessage(error);
+
+                return;
+            }
+
+            /*
+             * Modern browsers return a Promise.
+             * Older browsers may not return one.
+             */
+            if (playResult && typeof playResult.then === "function") {
+                playResult.then(function () {
                     updatePlayingDisplay();
-                })
-                .catch(function () {
+                }).catch(function (error) {
                     updatePausedDisplay();
 
                     musicStatus.textContent =
-                        "Check that " +
-                        songs[currentSong].file +
-                        " is in the same folder. ♡";
+                        getAudioErrorMessage(error);
                 });
+            } else {
+                updatePlayingDisplay();
+            }
         }
 
 
+        /* Select a song from the playlist. */
         function selectSong(index) {
             loadSong(index, true);
         }
 
 
+        /* Play or pause the current song. */
         function toggleMusic() {
             if (music.paused) {
                 playCurrentSong();
@@ -1746,27 +1798,42 @@
         }
 
 
+        /* Move forward or backward through the playlist. */
         function nextSong() {
             loadSong(currentSong + 1, true);
         }
-
 
         function previousSong() {
             loadSong(currentSong - 1, true);
         }
 
 
-        /* Update the music progress bar and timestamps */
+        /*
+         * Show the duration when the browser
+         * reads the audio metadata.
+         */
+        music.addEventListener("loadedmetadata", function () {
+            musicDuration.textContent = formatTime(music.duration);
 
+            if (
+                music.paused &&
+                musicStatus.textContent.indexOf("Loading ") === 0
+            ) {
+                musicStatus.textContent =
+                    "Ready to play " +
+                    songs[currentSong].title +
+                    " ♡";
+            }
+        });
+
+
+        /* Update the current time and progress bar during playback. */
         music.addEventListener("timeupdate", function () {
-            musicCurrentTime.textContent = formatTime(
-                music.currentTime
-            );
+            musicCurrentTime.textContent =
+                formatTime(music.currentTime);
 
-            musicDuration.textContent = formatTime(
-                music.duration
-            );
-
+            musicDuration.textContent =
+                formatTime(music.duration);
 
             if (
                 Number.isFinite(music.duration) &&
@@ -1783,15 +1850,18 @@
         });
 
 
-        /* Automatically play the next song when one ends */
+        /* Handle audio files that cannot be loaded or decoded. */
+        music.addEventListener("error", function () {
+            updatePausedDisplay();
 
-        music.addEventListener("ended", function () {
-            loadSong(currentSong + 1, true);
+            musicStatus.textContent =
+                getAudioErrorMessage();
         });
 
 
-        music.addEventListener("pause", function () {
-            updatePausedDisplay();
+        /* Automatically start the next song when the current one ends. */
+        music.addEventListener("ended", function () {
+            loadSong(currentSong + 1, true);
         });
 
 
@@ -1800,8 +1870,12 @@
         });
 
 
-        /* Prepare the first song without autoplaying it */
+        music.addEventListener("pause", function () {
+            updatePausedDisplay();
+        });
 
+
+        /* Prepare the first song without autoplaying it. */
         loadSong(0, false);
 
 
@@ -1881,8 +1955,7 @@
         }
 
 
-        /* Display the first photo when the page opens */
-
+        /* Display the first photo when the page opens. */
         showPhoto();
 
     </script>
