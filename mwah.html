@@ -2,2224 +2,1890 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#fff5f8"
+    >
+
+    <title>One Last Little Surprise ♡</title>
+
+    <style>
+        /* =========================================
+           GENERAL PAGE STYLES
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --pink: #f0a8c2;
+            --light-pink: #fff0f5;
+            --purple: #c9a9eb;
+            --text: #5c4a54;
+            --muted: #907b85;
+            --border: #efd6e2;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            font-family:
+                "Segoe Print",
+                "Bradley Hand",
+                "Comic Sans MS",
+                cursive;
+
+            color: var(--text);
+
+            background: linear-gradient(
+                135deg,
+                #fff5f8,
+                #fdf8ff,
+                #fffaf3
+            );
+        }
+
+        button {
+            font: inherit;
+        }
+
+        button:focus-visible {
+            outline: 3px solid #c9a9eb;
+            outline-offset: 4px;
+        }
+
+        /* =========================================
+           FLOATING BACKGROUND DECORATIONS
+        ========================================= */
+
+        .background-icon {
+            position: fixed;
+            z-index: 0;
+
+            pointer-events: none;
+            user-select: none;
+
+            opacity: 0.45;
+
+            animation: floatingIcon 4s ease-in-out infinite;
+        }
+
+        .calendar-icon {
+            top: 12%;
+            left: 6%;
+            font-size: 38px;
+        }
+
+        .flower-icon {
+            top: 27%;
+            right: 6%;
+            font-size: 33px;
+            animation-delay: 1s;
+        }
+
+        .heart-icon {
+            bottom: 23%;
+            left: 6%;
+            font-size: 31px;
+            animation-delay: 2s;
+        }
+
+        .star-icon {
+            right: 7%;
+            bottom: 12%;
+            font-size: 30px;
+            animation-delay: 1.5s;
+        }
+
+        .gift-icon {
+            top: 49%;
+            left: 3%;
+            font-size: 34px;
+            animation-delay: 2.5s;
+        }
+
+        .music-icon {
+            top: 66%;
+            right: 4%;
+            font-size: 28px;
+            animation-delay: 0.8s;
+        }
+
+        @keyframes floatingIcon {
+            0%,
+            100% {
+                transform: translateY(0) rotate(-4deg);
+            }
+
+            50% {
+                transform: translateY(-8px) rotate(4deg);
+            }
+        }
 
-<meta charset="UTF-8">
+        /* =========================================
+           MAIN LAYOUT
+        ========================================= */
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+        .page {
+            position: relative;
+            z-index: 1;
 
-<title>One Last Little Surprise ♡</title>
+            display: flex;
+            justify-content: center;
 
+            min-height: 100vh;
 
-<style>
+            padding: 27px 14px 50px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 18px;
+
+            animation: fadeDown 0.8s ease;
+        }
+
+        .header-heart {
+            display: inline-block;
+
+            font-size: 27px;
+
+            animation: heartbeat 1.8s ease-in-out infinite;
+        }
 
-/* =========================================================
-   BASIC
-========================================================= */
+        .header h1 {
+            margin-top: 4px;
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+            color: #624e59;
+            font-size: 24px;
+            line-height: 1.5;
+        }
+
+        .header p {
+            margin-top: 4px;
+
+            color: #9a828d;
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-body {
+        @keyframes heartbeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
 
-    min-height: 100vh;
+        /* =========================================
+           GENERAL CARDS
+        ========================================= */
 
-    font-family:
-        "Segoe Print",
-        "Bradley Hand",
-        "Comic Sans MS",
-        cursive;
+        .card {
+            width: 100%;
 
-    background:
-        linear-gradient(
-            135deg,
-            #fff5f8,
-            #fdf8ff,
-            #fffaf3
-        );
+            margin-top: 15px;
+            padding: 22px 18px;
+
+            border-radius: 24px;
 
-    color: #5c4a54;
+            background: rgba(255, 255, 255, 0.93);
 
-    overflow-x: hidden;
-}
+            box-shadow: 0 11px 30px rgba(120, 82, 104, 0.10);
 
+            animation: fadeUp 0.7s ease;
+        }
 
-/* =========================================================
-   FIXED ANIMATED BACKGROUND ICONS
-========================================================= */
+        .card-title {
+            margin-bottom: 6px;
 
-.background-icon {
+            color: #624d59;
+            font-size: 18px;
+            line-height: 1.6;
+        }
 
-    position: fixed;
+        .card-subtitle {
+            color: var(--muted);
 
-    pointer-events: none;
+            font-size: 10px;
+            line-height: 1.8;
+        }
 
-    user-select: none;
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
 
-    z-index: 0;
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    opacity: 0.55;
+        /* =========================================
+           FIVE-SONG MUSIC BOX
+        ========================================= */
 
-    animation:
-        floatingIcon 4s ease-in-out infinite;
-}
+        .music-card {
+            position: relative;
+            overflow: hidden;
 
+            display: block;
 
-.calendar-icon {
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding: 20px 16px 17px;
 
-    top: 12%;
-    left: 6%;
+            border: 1px solid #f2d9e6;
+            border-radius: 24px;
 
-    font-size: 38px;
+            background: linear-gradient(
+                145deg,
+                #fffafd,
+                #fff0f6 55%,
+                #f5efff
+            );
 
-    animation-delay: 0s;
-}
+            box-shadow: 0 12px 28px rgba(174, 112, 145, 0.15);
+        }
 
+        .music-card::before,
+        .music-card::after {
+            position: absolute;
 
-.flower-icon {
+            color: #e7b7ce;
+            font-size: 18px;
 
-    top: 27%;
-    right: 6%;
+            opacity: 0.8;
+            pointer-events: none;
 
-    font-size: 33px;
+            content: "✦";
+        }
 
-    animation-delay: 1s;
-}
+        .music-card::before {
+            top: 12px;
+            left: 15px;
+        }
 
+        .music-card::after {
+            right: 15px;
+            bottom: 12px;
+        }
 
-.heart-icon {
+        .music-box-heading {
+            margin-bottom: 14px;
 
-    bottom: 23%;
-    left: 6%;
+            color: #b07b94;
 
-    font-size: 31px;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-    animation-delay: 2s;
-}
+        .music-topline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
+            gap: 13px;
 
-.star-icon {
+            margin-bottom: 13px;
+        }
 
-    bottom: 12%;
-    right: 7%;
+        /* Vinyl record */
 
-    font-size: 30px;
+        .record-wrap {
+            position: relative;
+            flex-shrink: 0;
 
-    animation-delay: 1.5s;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
+            width: 78px;
+            height: 78px;
 
-.gift-icon {
+            border-radius: 50%;
 
-    top: 49%;
-    left: 3%;
+            background: repeating-radial-gradient(
+                circle,
+                #594858 0 3px,
+                #302937 4px 6px
+            );
 
-    font-size: 34px;
+            box-shadow: 0 5px 12px rgba(74, 49, 69, 0.22);
+        }
 
-    animation-delay: 2.5s;
-}
+        .record-wrap::after {
+            position: absolute;
 
+            width: 22px;
+            height: 22px;
 
-.music-icon {
+            border: 3px solid #fff0f6;
+            border-radius: 50%;
 
-    top: 66%;
-    right: 4%;
+            background: linear-gradient(
+                135deg,
+                #f7c1d5,
+                #c6a4e8
+            );
 
-    font-size: 28px;
+            content: "";
+        }
 
-    animation-delay: 0.8s;
-}
+        .record-wrap.playing {
+            animation: recordSpin 3s linear infinite;
+        }
 
+        @keyframes recordSpin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
-@keyframes floatingIcon {
+        /* Song information */
 
-    0%,
-    100% {
+        .music-track-info {
+            flex: 1;
+            min-width: 0;
 
-        transform:
-            translateY(0)
-            rotate(-4deg);
+            text-align: left;
+        }
 
-    }
+        .music-name {
+            overflow-wrap: anywhere;
 
-    50% {
+            color: #705064;
 
-        transform:
-            translateY(-8px)
-            rotate(4deg);
+            font-size: 14px;
+            font-weight: bold;
+        }
 
-    }
+        .music-status {
+            margin-top: 4px;
 
-}
+            color: #a28994;
 
+            font-size: 10px;
+            line-height: 1.6;
+        }
 
-/* =========================================================
-   PAGE
-========================================================= */
+        /* Music progress bar */
 
-.page {
+        .music-progress {
+            width: 100%;
+            height: 5px;
 
-    position: relative;
+            overflow: hidden;
 
-    z-index: 1;
+            margin: 8px 0 4px;
 
-    min-height: 100vh;
+            border-radius: 8px;
 
-    display: flex;
+            background: #f0dce7;
+        }
 
-    justify-content: center;
+        .music-progress-fill {
+            width: 0%;
+            height: 100%;
 
-    padding:
-        27px
-        14px
-        50px;
-}
+            border-radius: 8px;
 
+            background: linear-gradient(
+                90deg,
+                #efa7c2,
+                #c7a4e7
+            );
 
-.container {
+            transition: width 0.15s linear;
+        }
 
-    width: 100%;
+        .music-time-row {
+            display: flex;
+            justify-content: space-between;
 
-    max-width: 500px;
+            color: #a28994;
+            font-size: 9px;
+        }
 
-    text-align: center;
-}
+        /* Music control buttons */
 
+        .music-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-/* =========================================================
-   HEADER
-========================================================= */
+            gap: 14px;
 
-.header {
+            margin: 12px 0 14px;
+        }
 
-    margin-bottom: 18px;
+        .music-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
 
-    animation:
-        fadeDown 0.8s ease;
-}
+            width: 38px;
+            height: 38px;
 
+            border: none;
+            border-radius: 50%;
 
-.header-heart {
+            color: #a5657e;
+            background: #ffffff;
 
-    display: inline-block;
+            box-shadow: 0 3px 9px rgba(170, 112, 145, 0.12);
 
-    font-size: 23px;
+            font-size: 14px;
 
-    animation:
-        heartbeat 1.8s ease-in-out infinite;
-}
+            cursor: pointer;
 
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
 
-.header h1 {
+        .music-button:hover {
+            transform: scale(1.08);
+        }
 
-    margin-top: 4px;
+        .music-button.main {
+            width: 46px;
+            height: 46px;
 
-    font-size: 24px;
+            color: #ffffff;
 
-    color: #624e59;
-}
+            background: linear-gradient(
+                135deg,
+                #f1aac3,
+                #c9a8eb
+            );
 
+            box-shadow: 0 5px 13px rgba(188, 126, 157, 0.25);
 
-.header p {
+            font-size: 16px;
+        }
 
-    margin-top: 4px;
+        /* Song playlist */
 
-    font-size: 11px;
+        .music-playlist {
+            display: grid;
+            gap: 7px;
 
-    color: #9a828d;
-}
+            margin-top: 8px;
 
+            text-align: left;
+        }
 
-@keyframes fadeDown {
+        .song-choice {
+            display: flex;
+            align-items: center;
 
-    from {
+            width: 100%;
 
-        opacity: 0;
+            gap: 9px;
 
-        transform:
-            translateY(-12px);
+            padding: 8px 10px;
 
-    }
+            border: 1px solid transparent;
+            border-radius: 12px;
 
-    to {
+            color: #806d76;
 
-        opacity: 1;
+            background: rgba(255, 255, 255, 0.75);
 
-        transform:
-            translateY(0);
+            font-size: 10px;
+            text-align: left;
 
-    }
+            cursor: pointer;
 
-}
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
 
+        .song-choice:hover,
+        .song-choice.active {
+            border-color: #ecc9da;
 
-@keyframes heartbeat {
+            color: #a15f7c;
+            background: #ffffff;
+        }
 
-    0%,
-    100% {
+        .song-number {
+            flex-shrink: 0;
 
-        transform:
-            scale(1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    }
+            width: 24px;
+            height: 24px;
 
-    50% {
+            border-radius: 8px;
 
-        transform:
-            scale(1.15);
+            color: #b06e8b;
+            background: #fff0f5;
 
-    }
+            font-size: 10px;
+        }
 
-}
+        .song-choice.active .song-number {
+            color: #ffffff;
 
+            background: linear-gradient(
+                135deg,
+                #f1aac3,
+                #c9a8eb
+            );
+        }
 
-/* =========================================================
-   GENERAL CARD
-========================================================= */
+        .song-title {
+            flex: 1;
+            min-width: 0;
 
-.card {
+            overflow: hidden;
 
-    width: 100%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
 
-    background:
-        rgba(255,255,255,0.91);
+        .song-note {
+            color: #b69aa8;
+            font-size: 10px;
+        }
 
-    border-radius: 24px;
+        /* =========================================
+           BIRTHDAY LETTER
+        ========================================= */
 
-    padding:
-        22px
-        18px;
+        .letter {
+            position: relative;
 
-    margin-top: 15px;
+            margin-top: 17px;
+            padding: 18px;
 
-    box-shadow:
-        0 11px 30px
-        rgba(120,82,104,0.10);
+            border: 1px dashed #e4c8d6;
+            border-radius: 18px;
 
-    animation:
-        fadeUp 0.7s ease;
-}
+            background: #fff9fc;
 
+            text-align: left;
+        }
 
-.card-title {
+        .letter::before {
+            position: absolute;
 
-    font-size: 18px;
+            top: -14px;
+            right: 16px;
 
-    color: #624d59;
+            font-size: 24px;
 
-    margin-bottom: 6px;
-}
+            content: "💌";
 
+            animation: littleBounce 2s ease-in-out infinite;
+        }
 
-.card-subtitle {
+        .letter h3 {
+            margin-bottom: 12px;
 
-    font-size: 10px;
+            color: #684f5b;
 
-    line-height: 1.7;
+            font-size: 17px;
+            text-align: center;
+        }
 
-    color: #907b85;
-}
+        .letter p {
+            color: #806d76;
 
+            font-size: 11px;
+            line-height: 2;
+            overflow-wrap: break-word;
+        }
 
-@keyframes fadeUp {
+        .letter-signature {
+            margin-top: 12px;
 
-    from {
+            color: #a46d82;
 
-        opacity: 0;
+            font-size: 11px;
+            text-align: right;
+        }
 
-        transform:
-            translateY(10px);
+        @keyframes littleBounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
 
-    }
+            50% {
+                transform: translateY(-3px);
+            }
+        }
 
-    to {
+        /* =========================================
+           PHOTO GALLERY
+        ========================================= */
 
-        opacity: 1;
+        .gallery {
+            position: relative;
 
-        transform:
-            translateY(0);
+            margin-top: 14px;
+        }
 
-    }
+        .photo-frame {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-}
+            width: 100%;
+            max-width: 300px;
+            height: 230px;
 
+            overflow: hidden;
 
-/* =========================================================
-   GIFT SECTION
-========================================================= */
+            margin: 12px auto;
 
-.gift-card {
+            border: 1px solid #f0dce5;
+            border-radius: 18px;
 
-    min-height: 270px;
+            background: linear-gradient(
+                135deg,
+                #fff2f6,
+                #f8f0ff
+            );
 
-    display: flex;
+            box-shadow: 0 7px 20px rgba(130, 90, 110, 0.08);
+        }
 
-    flex-direction: column;
+        .photo-frame img {
+            display: none;
 
-    justify-content: center;
+            width: 100%;
+            height: 100%;
 
-    align-items: center;
-}
+            object-fit: cover;
+        }
 
+        .photo-placeholder {
+            padding: 20px;
 
-.gift-box {
+            color: #9a818d;
 
-    font-size: 70px;
+            font-size: 12px;
+            line-height: 1.8;
 
-    cursor: pointer;
+            overflow-wrap: anywhere;
+        }
 
-    display: inline-block;
+        .gallery-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    animation:
-        giftFloat 2.3s ease-in-out infinite;
+            gap: 15px;
 
-    transition:
-        transform 0.3s ease;
-}
+            margin-top: 8px;
+        }
 
+        .gallery-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
 
-.gift-box:hover {
+            width: 36px;
+            height: 36px;
 
-    transform:
-        scale(1.08);
-}
+            border: none;
+            border-radius: 50%;
 
+            color: #a5657e;
+            background: #fff0f5;
 
-@keyframes giftFloat {
+            font-family: inherit;
+            font-size: 16px;
 
-    0%,
-    100% {
+            cursor: pointer;
 
-        transform:
-            translateY(0)
-            rotate(-3deg);
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
 
-    }
+        .gallery-button:hover {
+            transform: scale(1.08);
 
-    50% {
+            background: #ffe6ef;
+        }
 
-        transform:
-            translateY(-8px)
-            rotate(3deg);
+        .photo-number {
+            color: #a18390;
+            font-size: 10px;
+        }
 
-    }
+        /* =========================================
+           MEMORY CAPSULE
+        ========================================= */
 
-}
+        .capsule-card {
+            position: relative;
+            overflow: hidden;
 
+            text-align: center;
+        }
 
-.gift-title {
+        .lock-icon {
+            margin-bottom: 8px;
 
-    margin-top: 10px;
+            font-size: 43px;
 
-    font-size: 19px;
+            animation: lockFloat 2.3s ease-in-out infinite;
+        }
 
-    color: #624d59;
-}
+        @keyframes lockFloat {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
 
+            50% {
+                transform: translateY(-5px);
+            }
+        }
 
-.gift-text {
+        .capsule-button {
+            margin-top: 14px;
+            padding: 10px 18px;
 
-    margin-top: 5px;
+            border: none;
+            border-radius: 20px;
 
-    font-size: 11px;
+            color: #a46780;
+            background: #fff0f5;
 
-    color: #907b85;
-}
+            font-size: 10px;
+            font-weight: bold;
 
+            cursor: pointer;
 
-.open-gift-button {
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
 
-    margin-top: 17px;
+        .capsule-button:hover {
+            transform: translateY(-2px);
 
-    padding:
-        10px
-        21px;
+            background: #ffe5ef;
+        }
 
-    border: none;
+        .capsule-message {
+            display: none;
 
-    border-radius: 22px;
+            margin-top: 15px;
+            padding: 15px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #f0a8c2,
-            #c9a9eb
-        );
+            border: 1px dashed #e4c9d6;
+            border-radius: 16px;
 
-    color: white;
+            background: #fff9fc;
 
-    font-family:
-        "Segoe Print",
-        "Bradley Hand",
-        "Comic Sans MS",
-        cursive;
+            text-align: center;
+        }
 
-    font-size: 11px;
+        .capsule-message.show {
+            display: block;
 
-    font-weight: 600;
+            animation: fadeUp 0.6s ease;
+        }
 
-    cursor: pointer;
+        .capsule-message h3 {
+            margin-bottom: 8px;
 
-    box-shadow:
-        0 6px 16px
-        rgba(188,126,157,0.22);
+            color: #654e59;
+            font-size: 16px;
+            line-height: 1.6;
+        }
 
-    transition:
-        0.25s ease;
-}
+        .capsule-message p {
+            color: #806d76;
 
+            font-size: 11px;
+            line-height: 1.8;
+        }
 
-.open-gift-button:hover {
+        /* =========================================
+           FINAL BIRTHDAY MESSAGE
+        ========================================= */
 
-    transform:
-        translateY(-3px);
-}
+        .final-card {
+            display: block;
 
+            margin-top: 17px;
+            padding: 27px 17px;
 
-.open-gift-button:active {
+            border-radius: 25px;
 
-    transform:
-        scale(0.95);
-}
+            background: rgba(255, 255, 255, 0.93);
 
+            box-shadow: 0 12px 32px rgba(120, 82, 104, 0.11);
 
-/* =========================================================
-   HIDDEN SURPRISE CONTENT
-========================================================= */
+            animation: finalAppear 1s ease;
+        }
 
-.surprise-content {
+        .final-heart {
+            font-size: 42px;
 
-    display: none;
-}
+            animation: heartbeat 1.8s infinite;
+        }
 
-.surprise-content.show {
+        .final-card h2 {
+            margin-top: 8px;
 
-    display: block;
+            color: #624d59;
 
-    animation:
-        revealContent 0.8s ease;
-}
+            font-size: 22px;
+            line-height: 1.5;
+        }
 
+        .final-card p {
+            max-width: 370px;
 
-@keyframes revealContent {
+            margin: 10px auto 0;
 
-    from {
+            color: #806d76;
 
-        opacity: 0;
+            font-size: 11px;
+            line-height: 1.9;
+        }
 
-        transform:
-            translateY(15px);
+        .start-button {
+            margin-top: 18px;
+            padding: 10px 19px;
 
-    }
+            border: none;
+            border-radius: 20px;
 
-    to {
+            color: #a4657e;
+            background: #fff0f5;
 
-        opacity: 1;
+            font-size: 10px;
+            font-weight: bold;
 
-        transform:
-            translateY(0);
+            cursor: pointer;
 
-    }
+            transition: transform 0.2s ease;
+        }
 
-}
+        .start-button:hover {
+            transform: translateY(-2px);
+        }
 
+        @keyframes finalAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(10px);
+            }
 
-/* =========================================================
-   LETTER
-========================================================= */
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
 
-.letter {
+        /* =========================================
+           MOBILE RESPONSIVE STYLES
+        ========================================= */
 
-    margin-top: 13px;
+        @media (max-width: 600px) {
+            .page {
+                padding: 23px 12px 40px;
+            }
 
-    padding:
-        17px;
+            .container {
+                max-width: 430px;
+            }
 
-    border-radius: 18px;
+            .header h1 {
+                font-size: 22px;
+            }
 
-    background:
-        #fff9fc;
+            .background-icon {
+                opacity: 0.3;
+            }
 
-    border:
-        1px dashed
-        #e4c8d6;
+            .calendar-icon {
+                left: 1%;
+                font-size: 29px;
+            }
 
-    text-align: left;
+            .flower-icon {
+                right: 1%;
+                font-size: 27px;
+            }
 
-    position: relative;
-}
+            .gift-icon {
+                left: 0;
+                font-size: 28px;
+            }
 
+            .heart-icon {
+                left: 1%;
+                font-size: 26px;
+            }
 
-.letter::before {
+            .star-icon {
+                right: 1%;
+                font-size: 24px;
+            }
 
-    content: "💌";
+            .music-icon {
+                right: 1%;
+                font-size: 22px;
+            }
 
-    position: absolute;
+            .photo-frame {
+                height: 215px;
+            }
 
-    top: -14px;
+            .music-topline {
+                gap: 10px;
+            }
 
-    right: 16px;
+            .record-wrap {
+                width: 68px;
+                height: 68px;
+            }
 
-    font-size: 24px;
+            .music-card {
+                padding: 17px 12px;
+            }
 
-    animation:
-        littleBounce 2s ease-in-out infinite;
-}
+            .song-choice {
+                padding: 8px;
+            }
+        }
 
+        /* Respect reduced-motion preferences */
 
-.letter h3 {
-
-    text-align: center;
-
-    font-size: 17px;
-
-    color: #684f5b;
-
-    margin-bottom: 12px;
-}
-
-
-.letter p {
-
-    font-size: 11px;
-
-    line-height: 2;
-
-    color: #806d76;
-}
-
-
-.letter-signature {
-
-    margin-top: 12px;
-
-    text-align: right;
-
-    color: #a46d82;
-
-    font-size: 11px;
-}
-
-
-@keyframes littleBounce {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-3px);
-
-    }
-
-}
-
-
-/* =========================================================
-   GALLERY
-========================================================= */
-
-.gallery {
-
-    margin-top: 14px;
-
-    position: relative;
-}
-
-
-.photo-frame {
-
-    width: 100%;
-
-    max-width: 300px;
-
-    height: 230px;
-
-    margin: 12px auto;
-
-    border-radius: 18px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff2f6,
-            #f8f0ff
-        );
-
-    border:
-        1px solid
-        #f0dce5;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 7px 20px
-        rgba(130,90,110,0.08);
-}
-
-
-.photo-frame img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    display: none;
-}
-
-
-.photo-placeholder {
-
-    padding: 20px;
-
-    font-size: 12px;
-
-    color: #9a818d;
-
-    line-height: 1.8;
-}
-
-
-.gallery-controls {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 15px;
-
-    margin-top: 8px;
-}
-
-
-.gallery-button {
-
-    width: 34px;
-
-    height: 34px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background:
-        #fff0f5;
-
-    color:
-        #a5657e;
-
-    font-family:
-        "Segoe Print",
-        "Bradley Hand",
-        "Comic Sans MS",
-        cursive;
-
-    cursor: pointer;
-
-    transition:
-        0.2s ease;
-}
-
-
-.gallery-button:hover {
-
-    transform:
-        scale(1.08);
-
-    background:
-        #ffe6ef;
-}
-
-
-.photo-number {
-
-    font-size: 10px;
-
-    color: #a18390;
-}
-
-
-/* =========================================================
-   MEMORY TIMELINE
-========================================================= */
-
-.timeline {
-
-    margin-top: 17px;
-
-    text-align: left;
-}
-
-
-.timeline-item {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 11px;
-
-    margin: 10px 0;
-}
-
-
-.timeline-icon {
-
-    width: 35px;
-
-    height: 35px;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    background:
-        #fff0f5;
-
-    font-size: 16px;
-
-    animation:
-        littleBounce 2.5s ease-in-out infinite;
-}
-
-
-.timeline-text {
-
-    font-size: 11px;
-
-    color: #806d76;
-
-    line-height: 1.5;
-}
-
-
-.timeline-line {
-
-    width: 2px;
-
-    height: 10px;
-
-    background:
-        #efd8e2;
-
-    margin-left: 16px;
-}
-
-
-
-/* =========================================================
-   MUSIC PLAYER
-========================================================= */
-
-.music-card {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 12px;
-
-    text-align: left;
-}
-
-
-.music-info {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-}
-
-
-.music-symbol {
-
-    width: 40px;
-
-    height: 40px;
-
-    border-radius: 14px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    background:
-        #fff0f5;
-
-    font-size: 19px;
-
-    animation:
-        musicPulse 1.8s ease-in-out infinite;
-}
-
-
-@keyframes musicPulse {
-
-    0%,
-    100% {
-
-        transform:
-            scale(1);
-
-    }
-
-    50% {
-
-        transform:
-            scale(1.08);
-
-    }
-
-}
-
-
-.music-name {
-
-    font-size: 12px;
-
-    color: #705864;
-}
-
-
-.music-status {
-
-    font-size: 9px;
-
-    color: #a28994;
-
-    margin-top: 2px;
-}
-
-
-.music-button {
-
-    border: none;
-
-    width: 38px;
-
-    height: 38px;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f1aac3,
-            #c9a8eb
-        );
-
-    color: white;
-
-    cursor: pointer;
-
-    font-size: 15px;
-
-    transition:
-        0.2s ease;
-}
-
-
-.music-button:hover {
-
-    transform:
-        scale(1.08);
-}
-
-
-/* =========================================================
-   MEMORY CAPSULE
-========================================================= */
-
-.capsule-card {
-
-    text-align: center;
-
-    overflow: hidden;
-
-    position: relative;
-}
-
-
-.lock-icon {
-
-    font-size: 43px;
-
-    margin-bottom: 8px;
-
-    animation:
-        lockFloat 2.3s ease-in-out infinite;
-}
-
-
-@keyframes lockFloat {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-5px);
-
-    }
-
-}
-
-
-.capsule-button {
-
-    margin-top: 14px;
-
-    padding:
-        9px
-        18px;
-
-    border: none;
-
-    border-radius: 20px;
-
-    background:
-        #fff0f5;
-
-    color:
-        #a46780;
-
-    font-family:
-        "Segoe Print",
-        "Bradley Hand",
-        "Comic Sans MS",
-        cursive;
-
-    font-size: 10px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition:
-        0.2s ease;
-}
-
-
-.capsule-button:hover {
-
-    transform:
-        translateY(-2px);
-
-    background:
-        #ffe5ef;
-}
-
-
-.capsule-message {
-
-    display: none;
-
-    margin-top: 15px;
-
-    padding:
-        15px;
-
-    border-radius: 16px;
-
-    background:
-        #fff9fc;
-
-    border:
-        1px dashed
-        #e4c9d6;
-
-    animation:
-        revealContent 0.6s ease;
-}
-
-
-.capsule-message.show {
-
-    display: block;
-}
-
-
-.capsule-message h3 {
-
-    font-size: 16px;
-
-    color: #654e59;
-
-    margin-bottom: 8px;
-}
-
-
-.capsule-message p {
-
-    font-size: 11px;
-
-    line-height: 1.8;
-
-    color: #806d76;
-}
-
-
-/* =========================================================
-   FINAL MESSAGE
-========================================================= */
-
-.final-card {
-
-    margin-top: 17px;
-
-    padding:
-        27px
-        17px;
-
-    background:
-        rgba(255,255,255,0.93);
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 12px 32px
-        rgba(120,82,104,0.11);
-
-    display: none;
-
-    animation:
-        finalAppear 1s ease;
-}
-
-
-.final-card.show {
-
-    display: block;
-}
-
-
-.final-heart {
-
-    font-size: 42px;
-
-    animation:
-        heartbeat 1.8s infinite;
-}
-
-
-.final-card h2 {
-
-    margin-top: 8px;
-
-    font-size: 22px;
-
-    color: #624d59;
-}
-
-
-.final-card p {
-
-    margin:
-        10px
-        auto
-        0;
-
-    max-width: 370px;
-
-    font-size: 11px;
-
-    line-height: 1.9;
-
-    color: #806d76;
-}
-
-
-.start-button {
-
-    margin-top: 18px;
-
-    padding:
-        9px
-        19px;
-
-    border: none;
-
-    border-radius: 20px;
-
-    background:
-        #fff0f5;
-
-    color:
-        #a4657e;
-
-    font-family:
-        "Segoe Print",
-        "Bradley Hand",
-        "Comic Sans MS",
-        cursive;
-
-    font-size: 10px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition:
-        0.2s ease;
-}
-
-
-.start-button:hover {
-
-    transform:
-        translateY(-2px);
-}
-
-
-@keyframes finalAppear {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            scale(0.95)
-            translateY(10px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            scale(1)
-            translateY(0);
-
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .page {
-
-        padding:
-            23px
-            12px
-            40px;
-
-    }
-
-
-    .container {
-
-        max-width: 430px;
-
-    }
-
-
-    .header h1 {
-
-        font-size: 22px;
-
-    }
-
-
-    .background-icon {
-
-        opacity: 0.35;
-
-    }
-
-
-    .calendar-icon {
-
-        left: 1%;
-
-        font-size: 29px;
-
-    }
-
-
-    .flower-icon {
-
-        right: 1%;
-
-        font-size: 27px;
-
-    }
-
-
-    .gift-icon {
-
-        left: 0%;
-
-        font-size: 28px;
-
-    }
-
-
-    .heart-icon {
-
-        left: 1%;
-
-        font-size: 26px;
-
-    }
-
-
-    .star-icon {
-
-        right: 1%;
-
-        font-size: 24px;
-
-    }
-
-
-    .music-icon {
-
-        right: 1%;
-
-        font-size: 22px;
-
-    }
-
-
-    .photo-frame {
-
-        height: 215px;
-
-    }
-
-}
-
-</style>
-
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
+    <!-- Floating background decorations -->
 
-<!-- =========================================================
-     FIXED ANIMATED ICONS
-========================================================= -->
+    <div class="background-icon calendar-icon" aria-hidden="true">
+        🗓️
+    </div>
 
-<div class="background-icon calendar-icon">
-    🗓️
-</div>
+    <div class="background-icon flower-icon" aria-hidden="true">
+        🌸
+    </div>
 
-<div class="background-icon flower-icon">
-    🌸
-</div>
+    <div class="background-icon heart-icon" aria-hidden="true">
+        🤍
+    </div>
 
-<div class="background-icon heart-icon">
-    🤍
-</div>
+    <div class="background-icon star-icon" aria-hidden="true">
+        ✨
+    </div>
 
-<div class="background-icon star-icon">
-    ✨
-</div>
+    <div class="background-icon gift-icon" aria-hidden="true">
+        🎁
+    </div>
 
-<div class="background-icon gift-icon">
-    🎁
-</div>
-
-<div class="background-icon music-icon">
-    🎵
-</div>
-
-
-
-<!-- =========================================================
-     PAGE
-========================================================= -->
-
-<div class="page">
-
-<div class="container">
-
-
-    <!-- HEADER -->
-
-    <div class="header">
-
-        <div class="header-heart">
-            ♡
-        </div>
-
-        <h1>
-            One Last Little Surprise
-        </h1>
-
-        <p>
-            There's something waiting for you, Kawya... ♡
-        </p>
-
+    <div class="background-icon music-icon" aria-hidden="true">
+        🎵
     </div>
 
 
+    <!-- Main page -->
 
-    <!-- =====================================================
-         GIFT
-    ====================================================== -->
+    <main class="page">
+        <div class="container">
 
-    <div
-        class="card gift-card"
-        id="giftCard"
-    >
+            <!-- Birthday heading -->
 
-        <div
-            class="gift-box"
-            id="giftBox"
-        >
-            🎁
-        </div>
+            <header class="header">
+                <div class="header-heart" aria-hidden="true">
+                    ♡
+                </div>
 
-        <div class="gift-title">
-            A Little Something For You
-        </div>
-
-        <div class="gift-text">
-            Open it when you're ready ♡
-        </div>
-
-        <button
-            class="open-gift-button"
-            onclick="openGift()"
-        >
-            Open Your Surprise ♡
-        </button>
-
-    </div>
-
-
-
-    <!-- =====================================================
-         SURPRISE CONTENT
-    ====================================================== -->
-
-    <div
-        class="surprise-content"
-        id="surpriseContent"
-    >
-
-
-        <!-- =================================================
-             LETTER
-        ================================================== -->
-
-        <div class="card">
-
-            <div class="card-title">
-                💌 A Little Letter
-            </div>
-
-            <div class="card-subtitle">
-                Some words I wanted to leave here for you.
-            </div>
-
-
-            <div class="letter">
-
-                <h3>
-                    Dear Kawya,
-                </h3>
-
+                <h1>One Last Little Surprise</h1>
 
                 <p>
-
-                    Some memories are small,
-                    but somehow they stay with us
-                    for a very long time.
-
-                    <br><br>
-
-                    From our first little chat,
-                    to the moments we have shared since then,
-                    I'm grateful for every memory
-                    that became part of this story.
-
-                    <br><br>
-
-                    This little website is just a collection
-                    of some of those moments.
-
-                    And I hope there will be many,
-                    many more memories to add here. ♡
-
+                    There's something waiting for you, Kawya... ♡
                 </p>
+            </header>
 
 
-                <div class="letter-signature">
+            <!-- =====================================
+                 MUSIC BOX
+            ====================================== -->
 
-                    Always cheering for you, ♡
+            <section
+                class="card music-card"
+                aria-label="Birthday music box"
+            >
+
+                <div class="music-box-heading">
+                    ♡ a little music box ♡
+                </div>
+
+                <div class="music-topline">
+
+                    <div
+                        class="record-wrap"
+                        id="recordWrap"
+                        aria-hidden="true"
+                    ></div>
+
+                    <div class="music-track-info">
+
+                        <div class="music-name" id="musicName">
+                            Our Little Song ♡
+                        </div>
+
+                        <div class="music-status" id="musicStatus">
+                            Choose a song and press play.
+                        </div>
+
+                        <div
+                            class="music-progress"
+                            role="progressbar"
+                            aria-label="Song progress"
+                        >
+                            <div
+                                class="music-progress-fill"
+                                id="musicProgressFill"
+                            ></div>
+                        </div>
+
+                        <div class="music-time-row">
+                            <span id="musicCurrentTime">0:00</span>
+
+                            <span id="musicDuration">0:00</span>
+                        </div>
+
+                    </div>
 
                 </div>
 
-            </div>
 
-        </div>
+                <!-- Music controls -->
 
+                <div class="music-controls">
 
-
-        <!-- =================================================
-             PHOTO GALLERY
-        ================================================== -->
-
-        <div class="card">
-
-            <div class="card-title">
-                📸 Our Little Moments
-            </div>
-
-            <div class="card-subtitle">
-                A few memories I want to keep.
-            </div>
-
-
-            <div class="gallery">
-
-                <div class="photo-frame">
-
-                    <!--
-                        PHOTO PLACEHOLDERS
-
-                        Put your photos in the same folder
-                        and change the names below.
-
-                        Example:
-
-                        memory1.jpg
-                        memory2.jpg
-                        memory3.jpg
-                    -->
-
-
-                    <img
-                        id="galleryImage"
-                        src="memory1"
-                        alt="Memory"
+                    <button
+                        type="button"
+                        class="music-button"
+                        onclick="previousSong()"
+                        aria-label="Previous song"
                     >
-                    <img
-                        id="galleryImage"
-                        src="memory2"
-                        alt="Memory"
-                    >
-                    <img
-                        id="galleryImage"
-                        src="memory3"
-                        alt="Memory"
-                    >
-                    <img
-                        id="galleryImage"
-                        src="memory4"
-                        alt="Memory"
-                    >
-                    <img
-                        id="galleryImage"
-                        src="memory5"
-                        alt="Memory"
-                    >
-                    <img
-                        id="galleryImage"
-                        src="memory6"
-                        alt="Memory"
-                    >
-                    <img
-                        id="galleryImage"
-                        src="memory7"
-                        alt="Memory"
-                    >
-                    <img
-                        id="galleryImage"
-                        src="memory8"
-                        alt="Memory"
-                    >
-                    <img
-                        id="galleryImage"
-                        src="memory9"
-                        alt="Memory"
-                    >
-                    <div
-                        class="photo-placeholder"
-                        id="photoPlaceholder"
-                    >
+                        |◀
+                    </button>
 
-                        📷
+                    <button
+                        type="button"
+                        class="music-button main"
+                        id="musicButton"
+                        onclick="toggleMusic()"
+                        aria-label="Play or pause music"
+                    >
+                        ▶
+                    </button>
+
+                    <button
+                        type="button"
+                        class="music-button"
+                        onclick="nextSong()"
+                        aria-label="Next song"
+                    >
+                        ▶|
+                    </button>
+
+                </div>
+
+
+                <!-- Playlist -->
+
+                <div
+                    class="music-playlist"
+                    id="musicPlaylist"
+                    aria-label="Choose a song"
+                >
+
+                    <button
+                        type="button"
+                        class="song-choice active"
+                        onclick="selectSong(0)"
+                    >
+                        <span class="song-number">1</span>
+
+                        <span class="song-title">
+                            Our Little Song
+                        </span>
+
+                        <span class="song-note">♡</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="song-choice"
+                        onclick="selectSong(1)"
+                    >
+                        <span class="song-number">2</span>
+
+                        <span class="song-title">
+                            A Sweet Memory
+                        </span>
+
+                        <span class="song-note">♫</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="song-choice"
+                        onclick="selectSong(2)"
+                    >
+                        <span class="song-number">3</span>
+
+                        <span class="song-title">
+                            Dancing Together
+                        </span>
+
+                        <span class="song-note">♪</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="song-choice"
+                        onclick="selectSong(3)"
+                    >
+                        <span class="song-number">4</span>
+
+                        <span class="song-title">
+                            My Favorite Person
+                        </span>
+
+                        <span class="song-note">♡</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="song-choice"
+                        onclick="selectSong(4)"
+                    >
+                        <span class="song-number">5</span>
+
+                        <span class="song-title">
+                            Forever and Always
+                        </span>
+
+                        <span class="song-note">♫</span>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Music file used by the player -->
+
+            <audio
+                id="backgroundMusic"
+                preload="metadata"
+            ></audio>
+
+
+            <!-- =====================================
+                 BIRTHDAY LETTER
+            ====================================== -->
+
+            <section class="card">
+
+                <div class="card-title">
+                    💌 A Little Letter
+                </div>
+
+                <div class="card-subtitle">
+                    Some words I wanted to leave here for you.
+                </div>
+
+                <div class="letter">
+
+                    <h3>Dear Kawya,</h3>
+
+                    <p>
+                        Some memories are small, but somehow they stay
+                        with us for a very long time.
 
                         <br><br>
 
-                        Add your first memory photo here. ♡
+                        From our first little chat, to the moments
+                        we have shared since then, I'm grateful for
+                        every memory that became part of this story.
+
+                        <br><br>
+
+                        This little website is just a collection of
+                        some of those moments. And I hope there will
+                        be many, many more memories to add here. ♡
+                    </p>
+
+                    <div class="letter-signature">
+                        Always cheering for you, ♡
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 PHOTO GALLERY
+            ====================================== -->
+
+            <section class="card">
+
+                <div class="card-title">
+                    📸 Our Little Moments
+                </div>
+
+                <div class="card-subtitle">
+                    A few memories I want to keep.
+                </div>
+
+                <div class="gallery">
+
+                    <div class="photo-frame">
+
+                        <img
+                            id="galleryImage"
+                            src=""
+                            alt="Our memory"
+                        >
+
+                        <div
+                            class="photo-placeholder"
+                            id="photoPlaceholder"
+                        >
+                            📷
+
+                            <br><br>
+
+                            Add your first memory photo here. ♡
+                        </div>
+
+                    </div>
+
+
+                    <!-- Photo navigation -->
+
+                    <div class="gallery-controls">
+
+                        <button
+                            type="button"
+                            class="gallery-button"
+                            onclick="previousPhoto()"
+                            aria-label="Previous photo"
+                        >
+                            ←
+                        </button>
+
+                        <span
+                            class="photo-number"
+                            id="photoNumber"
+                        >
+                            1 / 9
+                        </span>
+
+                        <button
+                            type="button"
+                            class="gallery-button"
+                            onclick="nextPhoto()"
+                            aria-label="Next photo"
+                        >
+                            →
+                        </button>
 
                     </div>
 
                 </div>
 
-
-                <div class="gallery-controls">
-
-                    <button
-                        class="gallery-button"
-                        onclick="previousPhoto()"
-                    >
-                        ←
-                    </button>
+            </section>
 
 
-                    <span
-                        class="photo-number"
-                        id="photoNumber"
-                    >
-                        1 / 9
-                    </span>
+            <!-- =====================================
+                 MEMORY CAPSULE
+            ====================================== -->
 
+            <section class="card capsule-card">
 
-                    <button
-                        class="gallery-button"
-                        onclick="nextPhoto()"
-                    >
-                        →
-                    </button>
+                <div class="lock-icon" aria-hidden="true">
+                    🔒
+                </div>
+
+                <div class="card-title">
+                    A Little Memory Capsule
+                </div>
+
+                <div class="card-subtitle">
+                    There's one tiny message waiting for the future. ♡
+                </div>
+
+                <button
+                    type="button"
+                    class="capsule-button"
+                    onclick="openCapsule()"
+                    aria-expanded="false"
+                    aria-controls="capsuleMessage"
+                    id="capsuleButton"
+                >
+                    🔐 Open Little Capsule
+                </button>
+
+                <div
+                    class="capsule-message"
+                    id="capsuleMessage"
+                    aria-hidden="true"
+                >
+
+                    <h3>
+                        Open this on 09 December 2027 ♡
+                    </h3>
+
+                    <p>
+                        If you're reading this on that day,
+                        I hope you're smiling.
+
+                        <br><br>
+
+                        One year from now, there will hopefully
+                        be many more memories to add to our story.
+
+                        <br><br>
+
+                        Until then...
+
+                        <br>
+
+                        <b>Let's make more memories. 🌸</b>
+                    </p>
 
                 </div>
 
-            </div>
-
-        </div>
+            </section>
 
 
+            <!-- =====================================
+                 FINAL BIRTHDAY MESSAGE
+            ====================================== -->
 
-        <!-- =================================================
-             MEMORY TIMELINE
-        ================================================== -->
+            <section class="final-card" id="finalCard">
 
-        <div class="card">
-
-            <div class="card-title">
-                🗓️ More Memories To Make
-            </div>
-
-            <div class="card-subtitle">
-                Our little story doesn't stop here.
-            </div>
-
-
-            <div class="timeline">
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-icon">
-                        💬
-                    </div>
-
-                    <div class="timeline-text">
-                        <b>First Chat</b><br>
-                        09 December 2025
-                    </div>
-
+                <div class="final-heart" aria-hidden="true">
+                    ♡
                 </div>
 
-
-                <div class="timeline-line"></div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-icon">
-                        🌸
-                    </div>
-
-                    <div class="timeline-text">
-                        <b>First Meetup</b><br>
-                        13 February 2026
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-line"></div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-icon">
-                        🌷
-                    </div>
-
-                    <div class="timeline-text">
-                        <b>First Date</b><br>
-                        22 July 2026
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-line"></div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-icon">
-                        ✨
-                    </div>
-
-                    <div class="timeline-text">
-                        <b>More Memories...</b><br>
-                        To be continued ♡
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-
-
-
-        <!-- =================================================
-             MUSIC
-        ================================================== -->
-
-        <div class="card music-card">
-
-
-            <div class="music-info">
-
-                <div class="music-symbol">
-                    🎵
-                </div>
-
-
-                <div>
-
-                    <div class="music-name">
-                        A Little Tune ♡
-                    </div>
-
-                    <div
-                        class="music-status"
-                        id="musicStatus"
-                    >
-                        Press play when you want.
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <button
-                class="music-button"
-                id="musicButton"
-                onclick="toggleMusic()"
-            >
-                ▶
-            </button>
-
-
-        </div>
-
-
-        <!--
-        =====================================================
-        MUSIC FILE
-
-        Put your music file in the same folder
-        as fourth.html.
-
-        Example:
-
-        birthday-song.mp3
-
-        Then change the src below to:
-
-        src="birthday-song.mp3"
-        =====================================================
-        -->
-
-        <audio
-            id="backgroundMusic"
-            loop
-        >
-
-            <source
-                src="your-music-file.mp3"
-                type="audio/mpeg"
-            >
-
-        </audio>
-
-
-
-        <!-- =================================================
-             MEMORY CAPSULE
-        ================================================== -->
-
-        <div class="card capsule-card">
-
-            <div class="lock-icon">
-                🔒
-            </div>
-
-
-            <div class="card-title">
-                A Little Memory Capsule
-            </div>
-
-
-            <div class="card-subtitle">
-
-                There's one tiny message
-                waiting for the future. ♡
-
-            </div>
-
-
-            <button
-                class="capsule-button"
-                onclick="openCapsule()"
-            >
-                🔐 Open Little Capsule
-            </button>
-
-
-            <div
-                class="capsule-message"
-                id="capsuleMessage"
-            >
-
-                <h3>
-                    Open this on 09 December 2027 ♡
-                </h3>
-
+                <h2>Happy Birthday, Kawya ♡</h2>
 
                 <p>
-
-                    If you're reading this on that day,
-                    I hope you're smiling.
+                    Thank you for being part of these little memories.
 
                     <br><br>
 
-                    One year from now,
-                    there will hopefully be
-                    many more memories to add
-                    to our little timeline.
-
-                    <br><br>
-
-                    Until then...
+                    These are only some of the first chapters.
 
                     <br>
 
-                    <b>
-                        Let's make more memories. 🌸
-                    </b>
+                    There are still so many memories waiting to be made. 🌷
 
+                    <br><br>
+
+                    <b>More memories are waiting for us. ♡</b>
                 </p>
 
-            </div>
+                <button
+                    type="button"
+                    class="start-button"
+                    onclick="startAgain()"
+                >
+                    ↶ Start Again
+                </button>
+
+            </section>
 
         </div>
+    </main>
 
 
-    </div>
+    <script>
+        /* =========================================
+           PHOTO GALLERY
+        ========================================= */
 
+        const photos = [
+            "memory1.jpg",
+            "memory2.jpg",
+            "memory3.jpg",
+            "memory4.jpg",
+            "memory5.jpg",
+            "memory6.jpg",
+            "memory7.jpg",
+            "memory8.jpg",
+            "memory9.jpg"
+        ];
 
+        let currentPhoto = 0;
 
-    <!-- =====================================================
-         FINAL MESSAGE
-    ====================================================== -->
 
-    <div
-        class="final-card"
-        id="finalCard"
-    >
+        function showPhoto() {
+            const image = document.getElementById("galleryImage");
 
-        <div class="final-heart">
-            ♡
-        </div>
+            const placeholder = document.getElementById(
+                "photoPlaceholder"
+            );
 
+            const number = document.getElementById("photoNumber");
 
-        <h2>
-            Happy Birthday, Kawya ♡
-        </h2>
+            const current = photos[currentPhoto];
 
 
-        <p>
+            image.style.display = "none";
 
-            Thank you for being part of
-            these little memories.
+            placeholder.style.display = "block";
 
-            <br><br>
+            placeholder.textContent = "Loading photo... ♡";
 
-            These are only some of the
-            first chapters.
 
-            <br>
+            image.onload = function () {
+                image.style.display = "block";
 
-            There are still so many
-            memories waiting to be made. 🌷
+                placeholder.style.display = "none";
+            };
 
-            <br><br>
 
-            <b>
-                More memories are waiting for us. ♡
-            </b>
+            image.onerror = function () {
+                image.style.display = "none";
 
-        </p>
+                placeholder.style.display = "block";
 
+                placeholder.textContent =
+                    "📷 Couldn't find " +
+                    current +
+                    ". Check that the photo is in the same folder. ♡";
+            };
 
-        <button
-            class="start-button"
-            onclick="startAgain()"
-        >
-            ↶ Start Again
-        </button>
 
-    </div>
+            image.src = current;
 
+            number.textContent =
+                (currentPhoto + 1) + " / " + photos.length;
+        }
 
-</div>
 
-</div>
+        function nextPhoto() {
+            currentPhoto =
+                (currentPhoto + 1) % photos.length;
 
+            showPhoto();
+        }
 
 
-<script>
+        function previousPhoto() {
+            currentPhoto =
+                (currentPhoto - 1 + photos.length) % photos.length;
 
+            showPhoto();
+        }
 
-/* =========================================================
-   GIFT OPENING
-========================================================= */
 
-function openGift() {
+        /* =========================================
+           FIVE-SONG MUSIC BOX
 
-    const gift =
-        document.getElementById("giftBox");
+           Keep song1.mp3 through song5.mp3 in the
+           same folder as this HTML file.
+        ========================================= */
 
-    const giftCard =
-        document.getElementById("giftCard");
+        const music = document.getElementById(
+            "backgroundMusic"
+        );
 
-    const content =
-        document.getElementById("surpriseContent");
+        const musicButton = document.getElementById(
+            "musicButton"
+        );
 
-    const finalCard =
-        document.getElementById("finalCard");
-
-
-    /* Gift animation */
-
-    gift.style.animation = "none";
-
-    gift.style.transform =
-        "scale(1.25) rotate(8deg)";
-
-
-    setTimeout(() => {
-
-        gift.style.transform =
-            "scale(0.8) rotate(-5deg)";
-
-    }, 180);
-
-
-    setTimeout(() => {
-
-        giftCard.style.display =
-            "none";
-
-
-        content.classList.add("show");
-
-
-        finalCard.classList.add("show");
-
-
-        window.scrollTo({
-
-            top: 0,
-
-            behavior: "smooth"
-
-        });
-
-    }, 650);
-
-}
-
-
-
-/* =========================================================
-   PHOTO GALLERY
-========================================================= */
-
-
-/*
-    ADD YOUR PHOTOS HERE.
-
-    Example:
-
-    "memory1.jpg",
-    "memory2.jpg",
-    "memory3.jpg"
-
-*/
-
-const photos = [
-
-    "memory1.jpg",
-
-    "memory2.jpg",
-
-    "memory3.jpg",
-    
-    "memory4.jpg",
-    
-    "memory5.jpg",
-    
-    "memory6.jpg",
-    
-    "memory7.jpg",
-    
-    "memory8.jpg",
-    
-    "memory9.jpg"
-
-];
-
-
-let currentPhoto = 0;
-
-
-function showPhoto() {
-
-    const image =
-        document.getElementById("galleryImage");
-
-    const placeholder =
-        document.getElementById("photoPlaceholder");
-
-    const number =
-        document.getElementById("photoNumber");
-
-
-    const current =
-        photos[currentPhoto];
-
-
-    /*
-        If the photo is still a placeholder
-        or doesn't exist, show the cute
-        placeholder instead.
-    */
-
-    image.src = current;
-
-    image.style.display = "block";
-
-    placeholder.style.display = "none";
-
-
-    image.onerror = function() {
-
-        image.style.display = "none";
-
-        placeholder.style.display = "block";
-
-        placeholder.innerHTML =
-            "📷<br><br>" +
-            "Add your memory photo here. ♡";
-
-    };
-
-
-    number.textContent =
-        (currentPhoto + 1) +
-        " / " +
-        photos.length;
-
-}
-
-
-function nextPhoto() {
-
-    currentPhoto++;
-
-    if (currentPhoto >= photos.length) {
-
-        currentPhoto = 0;
-
-    }
-
-    showPhoto();
-
-}
-
-
-function previousPhoto() {
-
-    currentPhoto--;
-
-    if (currentPhoto < 0) {
-
-        currentPhoto =
-            photos.length - 1;
-
-    }
-
-    showPhoto();
-
-}
-
-
-
-/* =========================================================
-   MUSIC
-========================================================= */
-
-const music =
-    document.getElementById(
-        "backgroundMusic"
-    );
-
-
-const musicButton =
-    document.getElementById(
-        "musicButton"
-    );
-
-
-const musicStatus =
-    document.getElementById(
-        "musicStatus"
-    );
-
-
-function toggleMusic() {
-
-    if (music.paused) {
-
-        music.play()
-            .then(() => {
-
-                musicButton.textContent =
-                    "Ⅱ";
-
-                musicStatus.textContent =
-                    "Playing a little tune ♡";
-
-            })
-            .catch(() => {
-
-                musicStatus.textContent =
-                    "Add your music file first ♡";
-
-            });
-
-    }
-
-    else {
-
-        music.pause();
-
-        musicButton.textContent =
-            "▶";
-
-        musicStatus.textContent =
-            "Music paused ♡";
-
-    }
-
-}
-
-
-
-/* =========================================================
-   MEMORY CAPSULE
-========================================================= */
-
-function openCapsule() {
-
-    const capsule =
-        document.getElementById(
-            "capsuleMessage"
+        const musicStatus = document.getElementById(
+            "musicStatus"
+        );
+
+        const musicName = document.getElementById(
+            "musicName"
+        );
+
+        const recordWrap = document.getElementById(
+            "recordWrap"
+        );
+
+        const musicProgressFill = document.getElementById(
+            "musicProgressFill"
+        );
+
+        const musicCurrentTime = document.getElementById(
+            "musicCurrentTime"
+        );
+
+        const musicDuration = document.getElementById(
+            "musicDuration"
         );
 
 
-    capsule.classList.toggle("show");
-
-}
-
-
-
-/* =========================================================
-   START AGAIN
-========================================================= */
-
-function startAgain() {
-
-    window.location.href =
-        "hi-love.html";
-
-}
-
-
-
-/* =========================================================
-   INITIAL PHOTO
-========================================================= */
-
-showPhoto();
+        const songs = [
+            {
+                title: "Our Little Song",
+                file: "song1.mp3"
+            },
+            {
+                title: "A Sweet Memory",
+                file: "song2.mp3"
+            },
+            {
+                title: "Dancing Together",
+                file: "song3.mp3"
+            },
+            {
+                title: "My Favorite Person",
+                file: "song4.mp3"
+            },
+            {
+                title: "Forever and Always",
+                file: "song5.mp3"
+            }
+        ];
 
 
-</script>
+        let currentSong = 0;
 
+
+        function formatTime(seconds) {
+            if (!Number.isFinite(seconds)) {
+                return "0:00";
+            }
+
+            const minutes = Math.floor(seconds / 60);
+
+            const remainingSeconds = Math.floor(
+                seconds % 60
+            );
+
+            const formattedSeconds = String(
+                remainingSeconds
+            ).padStart(2, "0");
+
+            return minutes + ":" + formattedSeconds;
+        }
+
+
+        function updatePlaylistHighlight() {
+            const buttons = document.querySelectorAll(
+                ".song-choice"
+            );
+
+            buttons.forEach(function (button, index) {
+                button.classList.toggle(
+                    "active",
+                    index === currentSong
+                );
+            });
+        }
+
+
+        function updatePlayingDisplay() {
+            musicButton.textContent = "Ⅱ";
+
+            musicButton.setAttribute(
+                "aria-label",
+                "Pause music"
+            );
+
+            recordWrap.classList.add("playing");
+
+            musicStatus.textContent =
+                "Playing " + songs[currentSong].title + " ♡";
+        }
+
+
+        function updatePausedDisplay() {
+            musicButton.textContent = "▶";
+
+            musicButton.setAttribute(
+                "aria-label",
+                "Play music"
+            );
+
+            recordWrap.classList.remove("playing");
+        }
+
+
+        function loadSong(index, shouldPlay) {
+            currentSong =
+                (index + songs.length) % songs.length;
+
+            music.src = songs[currentSong].file;
+
+            musicName.textContent =
+                songs[currentSong].title + " ♡";
+
+            musicStatus.textContent =
+                "Song " +
+                (currentSong + 1) +
+                " of " +
+                songs.length;
+
+            musicProgressFill.style.width = "0%";
+
+            musicCurrentTime.textContent = "0:00";
+
+            musicDuration.textContent = "0:00";
+
+            updatePlaylistHighlight();
+
+            updatePausedDisplay();
+
+            music.load();
+
+
+            if (shouldPlay) {
+                playCurrentSong();
+            }
+        }
+
+
+        function playCurrentSong() {
+            music.play()
+                .then(function () {
+                    updatePlayingDisplay();
+                })
+                .catch(function () {
+                    updatePausedDisplay();
+
+                    musicStatus.textContent =
+                        "Check that " +
+                        songs[currentSong].file +
+                        " is in the same folder. ♡";
+                });
+        }
+
+
+        function selectSong(index) {
+            loadSong(index, true);
+        }
+
+
+        function toggleMusic() {
+            if (music.paused) {
+                playCurrentSong();
+            } else {
+                music.pause();
+
+                updatePausedDisplay();
+
+                musicStatus.textContent = "Music paused ♡";
+            }
+        }
+
+
+        function nextSong() {
+            loadSong(currentSong + 1, true);
+        }
+
+
+        function previousSong() {
+            loadSong(currentSong - 1, true);
+        }
+
+
+        /* Update the music progress bar and timestamps */
+
+        music.addEventListener("timeupdate", function () {
+            musicCurrentTime.textContent = formatTime(
+                music.currentTime
+            );
+
+            musicDuration.textContent = formatTime(
+                music.duration
+            );
+
+
+            if (
+                Number.isFinite(music.duration) &&
+                music.duration > 0
+            ) {
+                const progress =
+                    (music.currentTime / music.duration) * 100;
+
+                musicProgressFill.style.width =
+                    progress + "%";
+            } else {
+                musicProgressFill.style.width = "0%";
+            }
+        });
+
+
+        /* Automatically play the next song when one ends */
+
+        music.addEventListener("ended", function () {
+            loadSong(currentSong + 1, true);
+        });
+
+
+        music.addEventListener("pause", function () {
+            updatePausedDisplay();
+        });
+
+
+        music.addEventListener("play", function () {
+            updatePlayingDisplay();
+        });
+
+
+        /* Prepare the first song without autoplaying it */
+
+        loadSong(0, false);
+
+
+        /* =========================================
+           MEMORY CAPSULE
+        ========================================= */
+
+        function openCapsule() {
+            const message = document.getElementById(
+                "capsuleMessage"
+            );
+
+            const button = document.getElementById(
+                "capsuleButton"
+            );
+
+            const isOpen = message.classList.toggle("show");
+
+            message.setAttribute(
+                "aria-hidden",
+                String(!isOpen)
+            );
+
+            button.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            button.textContent = isOpen
+                ? "💗 Close Little Capsule"
+                : "🔐 Open Little Capsule";
+        }
+
+
+        /* =========================================
+           START AGAIN BUTTON
+        ========================================= */
+
+        function startAgain() {
+            currentPhoto = 0;
+
+            showPhoto();
+
+            music.pause();
+
+            loadSong(0, false);
+
+
+            const capsuleMessage = document.getElementById(
+                "capsuleMessage"
+            );
+
+            const capsuleButton = document.getElementById(
+                "capsuleButton"
+            );
+
+            capsuleMessage.classList.remove("show");
+
+            capsuleMessage.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            capsuleButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            capsuleButton.textContent =
+                "🔐 Open Little Capsule";
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+
+        /* Display the first photo when the page opens */
+
+        showPhoto();
+
+    </script>
 
 </body>
 
