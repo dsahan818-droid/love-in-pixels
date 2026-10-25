@@ -5,1119 +5,182 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our Little Memories ♡</title>
 <style>
-@font-face {
-font-family: "TharuNidahasa";
-src: url("./tharu_digital_nidahasa.ttf") format("truetype");
-font-weight: normal;
-font-style: normal;
-font-display: swap;
-}
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
-body {
-min-height: 100vh;
-font-family:
-"Segoe Print",
-"Bradley Hand",
-"Comic Sans MS",
-cursive;
-background:
-linear-gradient(
-135deg,
-#fff5f8,
-#fdf8ff,
-#fffaf3
-);
-color: #5c4a54;
-overflow-x: hidden;
-}
-.background-icon {
-position: fixed;
-pointer-events: none;
-z-index: 0;
-opacity: 0.65;
-user-select: none;
-animation:
-floatIcon 4s ease-in-out infinite;
-}
-.calendar {
-font-size: 42px;
-top: 12%;
-left: 7%;
-animation-delay: 0s;
-}
-.flower {
-font-size: 34px;
-top: 27%;
-right: 7%;
-animation-delay: 1s;
-}
-.heart {
-font-size: 34px;
-bottom: 23%;
-left: 6%;
-animation-delay: 2s;
-}
-.star {
-font-size: 31px;
-bottom: 12%;
-right: 8%;
-animation-delay: 1.5s;
-}
-.chat {
-font-size: 37px;
-top: 47%;
-left: 4%;
-animation-delay: 2.5s;
-}
-.flower-two {
-font-size: 27px;
-top: 65%;
-right: 5%;
-animation-delay: 0.8s;
-}
-@keyframes floatIcon {
-0%,
-100% {
-transform: translateY(0) rotate(-4deg);
-}
-50% {
-transform: translateY(-8px) rotate(4deg);
-}
-}
-.page {
-position: relative;
-z-index: 1;
-min-height: 100vh;
-display: flex;
-justify-content: center;
-padding:
-28px
-15px
-45px;
-}
-.container {
-width: 100%;
-max-width: 500px;
-text-align: center;
-}
-.header {
-margin-bottom: 18px;
-animation:
-fadeDown 0.8s ease;
-}
-.header-heart {
-display: inline-block;
-font-size: 24px;
-animation:
-heartbeat 1.8s ease-in-out infinite;
-}
-.header h1 {
-margin-top: 4px;
-font-size: 25px;
-color: #624e59;
-font-weight: 700;
-}
-.header p {
-margin-top: 4px;
-font-size: 12px;
-color: #9a828d;
-}
-@keyframes fadeDown {
-from {
-opacity: 0;
-transform: translateY(-12px);
-}
-to {
-opacity: 1;
-transform: translateY(0);
-}
-}
-@keyframes heartbeat {
-0%,
-100% {
-transform: scale(1);
-}
-50% {
-transform: scale(1.16);
-}
-}
-.memory-card {
-width: 100%;
-min-height: 330px;
-padding:
-25px
-20px;
-background:
-rgba(255, 255, 255, 0.91);
-border-radius: 25px;
-border:
-1px solid
-rgba(255, 255, 255, 0.9);
-box-shadow:
-0 12px 32px
-rgba(120, 82, 104, 0.12);
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-transition:
-opacity 0.3s ease,
-transform 0.3s ease;
-}
-.memory-number {
-font-size: 10px;
-letter-spacing: 1.4px;
-color: #b28c9e;
-margin-bottom: 10px;
-}
-.memory-icon {
-width: 66px;
-height: 66px;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 21px;
-background:
-linear-gradient(
-135deg,
-#fff0f5,
-#f7efff
-);
-font-size: 35px;
-margin-bottom: 12px;
-box-shadow:
-0 7px 18px
-rgba(181, 131, 157, 0.12);
-animation:
-iconPop 0.7s ease;
-}
-@keyframes iconPop {
-0% {
-opacity: 0;
-transform: scale(0.75) rotate(-8deg);
-}
-70% {
-transform: scale(1.08) rotate(3deg);
-}
-100% {
-opacity: 1;
-transform: scale(1) rotate(0);
-}
-}
-.memory-card h2 {
-font-size: 21px;
-color: #624d59;
-margin-bottom: 9px;
-}
-.date-box {
-display: inline-flex;
-align-items: center;
-gap: 7px;
-padding:
-7px
-14px;
-border-radius: 18px;
-background:
-#fff1f6;
-color:
-#b16d87;
-font-size: 12px;
-font-weight: 600;
-margin-bottom: 13px;
-box-shadow:
-0 4px 12px
-rgba(188, 119, 148, 0.08);
-}
-.date-calendar {
-font-size: 15px;
-animation:
-littleBounce 2s ease-in-out infinite;
-}
-@keyframes littleBounce {
-0%,
-100% {
-transform: translateY(0);
-}
-50% {
-transform: translateY(-2px);
-}
-}
-.memory-text {
-max-width: 370px;
-font-size: 12px;
-line-height: 1.8;
-color: #806d76;
-}
-.placeholder {
-margin-top: 10px;
-padding:
-8px
-12px;
-max-width: 350px;
-border-radius: 13px;
-background:
-#faf5ff;
-border:
-1px dashed
-#d9c5e0;
-color:
-#957e9f;
-font-size: 10px;
-line-height: 1.5;
-}
-.next-button {
-border: none;
-cursor: pointer;
-margin-top: 19px;
-padding:
-10px
-22px;
-border-radius: 22px;
-background:
-linear-gradient(
-135deg,
-#f0a8c2,
-#c9a9eb
-);
-color: white;
-font-family:
-"Segoe Print",
-"Bradley Hand",
-"Comic Sans MS",
-cursive;
-font-size: 12px;
-font-weight: 600;
-box-shadow:
-0 6px 16px
-rgba(188, 126, 157, 0.22);
-transition:
-transform 0.2s ease,
-box-shadow 0.2s ease;
-}
-.next-button:hover {
-transform: translateY(-3px);
-box-shadow:
-0 9px 20px
-rgba(188, 126, 157, 0.28);
-}
-.next-button:active {
-transform: scale(0.95);
-}
-.progress {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 6px;
-margin-top: 13px;
-}
-.dot {
-width: 6px;
-height: 6px;
-border-radius: 50%;
-background:
-#e3d5dc;
-transition:
-all 0.3s ease;
-}
-.dot.active {
-width: 18px;
-border-radius: 10px;
-background:
-#d99ab4;
-}
-.final-message {
-display: none;
-padding:
-24px
-18px;
-background:
-rgba(255, 255, 255, 0.91);
-border-radius: 25px;
-box-shadow:
-0 12px 32px
-rgba(120, 82, 104, 0.12);
-animation:
-finalAppear 0.7s ease;
-}
-.final-message.show {
-display: block;
-}
-.final-icon {
-font-size: 39px;
-margin-bottom: 10px;
-animation:
-heartbeat 1.8s infinite;
-}
-.final-message h2 {
-font-size: 20px;
-color: #624d59;
-margin-bottom: 12px;
-}
-.final-message p {
-max-width: 380px;
-margin: auto;
-font-size: 12px;
-line-height: 1.8;
-color: #806d76;
-}
-@keyframes finalAppear {
-from {
-opacity: 0;
-transform: translateY(12px) scale(0.97);
-}
-to {
-opacity: 1;
-transform: translateY(0) scale(1);
-}
-}
-.cute-button {
-border: none;
-cursor: pointer;
-margin-top: 17px;
-padding:
-9px
-19px;
-border-radius: 20px;
-background:
-#fff0f5;
-color:
-#a6657f;
-font-family:
-"Segoe Print",
-"Bradley Hand",
-"Comic Sans MS",
-cursive;
-font-size: 11px;
-font-weight: 600;
-transition:
-0.2s ease;
-}
-.cute-button:hover {
-transform:
-translateY(-2px);
-background:
-#ffe7ef;
-}
-.extra-section {
-margin-top: 16px;
-padding:
-18px
-17px;
-background:
-rgba(255, 255, 255, 0.88);
-border-radius: 22px;
-box-shadow:
-0 9px 25px
-rgba(120, 82, 104, 0.08);
-animation:
-fadeUp 0.8s ease;
-}
-.extra-section h3 {
-font-size: 17px;
-color: #66515c;
-margin-bottom: 6px;
-}
-.extra-section > p {
-font-size: 11px;
-line-height: 1.7;
-color: #907b85;
-}
-.chat-button {
-margin-top: 11px;
-padding:
-8px
-17px;
-border:
-1px solid
-#efd6e0;
-border-radius: 20px;
-background:
-#fff8fb;
-color:
-#a4657e;
-cursor: pointer;
-font-family:
-"Segoe Print",
-"Bradley Hand",
-"Comic Sans MS",
-cursive;
-font-size: 11px;
-font-weight: 600;
-transition:
-0.2s ease;
-}
-.chat-button:hover {
-transform:
-translateY(-2px);
-background:
-#fff0f6;
-}
-.poem {
-font-family: "TharuNidahasa", sans-serif;
-margin-top: 11px;
-padding:
-14px;
-border-radius: 16px;
-background:
-#fff8fc;
-border:
-1px dashed
-#e8cbd9;
-color:
-#876f7b;
-font-size: 11px;
-line-height: 2;
-position: relative;
-}
-.poem::before {
-content: "🌸";
-position: absolute;
-top: -13px;
-left: 18px;
-font-size: 20px;
-animation:
-littleBounce 2s ease-in-out infinite;
-}
-.page4-portal {
-position: relative;
-margin-top: 28px;
-padding:
-25px
-10px
-18px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-min-height: 185px;
-overflow: visible;
-}
-.portal-message {
-position: absolute;
-top: 0;
-left: 50%;
-transform:
-translate(-50%, 8px)
-scale(0.92);
-width: max-content;
-max-width: 90%;
-opacity: 0;
-color: #a45f7a;
-font-size: 16px;
-font-weight: 700;
-letter-spacing: 0.5px;
-text-shadow:
-0 3px 12px
-rgba(210, 130, 165, 0.18);
-pointer-events: none;
-transition:
-opacity 0.55s ease,
-transform 0.65s
-cubic-bezier(.22,.61,.36,1);
-z-index: 5;
-}
-.portal-message span {
-display: inline-block;
-margin-left: 3px;
-animation:
-heartbeat 1.6s ease-in-out infinite;
-}
-.love-portal:hover ~ .portal-message {
-opacity: 1;
-transform:
-translate(-50%, 0)
-scale(1);
-}
-.love-portal {
-position: relative;
-width: 82px;
-height: 82px;
-margin-top: 23px;
-border: none;
-background: transparent;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
--webkit-tap-highlight-color: transparent;
-outline: none;
-transition:
-transform 0.45s
-cubic-bezier(.22,.61,.36,1);
-}
-.portal-ring {
-position: absolute;
-width: 66px;
-height: 66px;
-border-radius: 50%;
-border:
-1px solid
-rgba(230, 157, 187, 0.48);
-box-shadow:
-0 0 0 7px
-rgba(240, 184, 207, 0.08),
-0 0 25px
-rgba(226, 151, 182, 0.20);
-transition:
-width 0.7s ease,
-height 0.7s ease,
-box-shadow 0.7s ease,
-border-color 0.7s ease;
-}
-.portal-heart {
-position: relative;
-z-index: 3;
-width: 53px;
-height: 53px;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 50%;
-background:
-linear-gradient(
-135deg,
-#ffdce9,
-#f3d9ff
-);
-color: #c87599;
-font-size: 34px;
-line-height: 1;
-box-shadow:
-0 9px 25px
-rgba(202, 124, 158, 0.20);
-transition:
-transform 0.55s
-cubic-bezier(.22,.61,.36,1),
-box-shadow 0.55s ease;
-}
-.portal-hint {
-margin-top: 12px;
-font-size: 9px;
-color: #ae929f;
-letter-spacing: 0.3px;
-opacity: 0.85;
-transition:
-opacity 0.4s ease,
-transform 0.4s ease;
-}
-.portal-flower {
-position: absolute;
-z-index: 2;
-font-size: 15px;
-opacity: 0;
-pointer-events: none;
-transition:
-opacity 0.5s ease,
-transform 0.8s
-cubic-bezier(.22,.61,.36,1);
-}
-.flower-one {
-left: 50%;
-top: 50%;
-transform:
-translate(-50%, -50%)
-rotate(-15deg);
-}
-.flower-two {
-left: 50%;
-top: 50%;
-transform:
-translate(-50%, -50%)
-rotate(15deg);
-}
-.portal-sparkle {
-position: absolute;
-z-index: 1;
-color: #d79ab5;
-font-size: 17px;
-opacity: 0;
-pointer-events: none;
-transition:
-opacity 0.5s ease,
-transform 0.9s
-cubic-bezier(.22,.61,.36,1);
-}
-.sparkle-one {
-left: 50%;
-top: 50%;
-transform:
-translate(-50%, -50%);
-}
-.sparkle-two {
-left: 50%;
-top: 50%;
-transform:
-translate(-50%, -50%);
-}
-.sparkle-three {
-left: 50%;
-top: 50%;
-transform:
-translate(-50%, -50%);
-}
-.love-portal:hover {
-transform:
-translateY(-6px)
-scale(1.04);
-}
-.love-portal:hover .portal-ring {
-width: 82px;
-height: 82px;
-border-color:
-rgba(226, 143, 177, 0.65);
-box-shadow:
-0 0 0 10px
-rgba(240, 184, 207, 0.07),
-0 0 40px
-rgba(226, 143, 177, 0.35);
-}
-.love-portal:hover .portal-heart {
-transform:
-scale(1.08)
-rotate(-5deg);
-box-shadow:
-0 12px 32px
-rgba(202, 124, 158, 0.30),
-0 0 24px
-rgba(242, 174, 204, 0.32);
-}
-.love-portal:hover .portal-flower {
-opacity: 1;
-}
-.love-portal:hover .flower-one {
-transform:
-translate(-65px, -37px)
-rotate(-20deg);
-}
-.love-portal:hover .flower-two {
-transform:
-translate(45px, -45px)
-rotate(20deg);
-}
-.love-portal:hover .sparkle-one {
-opacity: 1;
-transform:
-translate(-45px, 22px)
-scale(1.1);
-}
-.love-portal:hover .sparkle-two {
-opacity: 1;
-transform:
-translate(43px, 21px)
-scale(0.9);
-}
-.love-portal:hover .sparkle-three {
-opacity: 1;
-transform:
-translate(5px, -48px)
-scale(1.2);
-}
-.love-portal.leaving {
-pointer-events: none;
-animation:
-portalLeave 0.8s
-cubic-bezier(.22,.61,.36,1)
-forwards;
-}
-.love-portal.leaving .portal-ring {
-animation:
-ringExpand 0.8s ease forwards;
-}
-.love-portal.leaving .portal-heart {
-animation:
-heartFly 0.8s ease forwards;
-}
-.page4-portal.leaving .portal-message {
-opacity: 1;
-transform:
-translate(-50%, 0)
-scale(1.05);
-}
-@keyframes portalLeave {
-0% {
-transform: scale(1);
-opacity: 1;
-}
-45% {
-transform: scale(1.12);
-opacity: 1;
-}
-100% {
-transform: scale(0.35);
-opacity: 0;
-}
-}
-@keyframes ringExpand {
-0% {
-transform: scale(1);
-opacity: 1;
-}
-100% {
-transform: scale(2.2);
-opacity: 0;
-}
-}
-@keyframes heartFly {
-0% {
-transform: scale(1);
-opacity: 1;
-}
-50% {
-transform: scale(1.35);
-opacity: 1;
-}
-100% {
-transform: scale(0.4);
-opacity: 0;
-}
-}
-.chat-viewer {
-display: none;
-position: fixed;
-inset: 0;
-z-index: 100;
-background:
-rgba(30, 25, 30, 0.93);
-padding:
-18px;
-overflow-y: auto;
-animation:
-fadeIn 0.3s ease;
-}
-.chat-viewer.show {
-display: flex;
-justify-content: center;
-align-items: flex-start;
-}
-.chat-content {
-width: 100%;
-max-width: 500px;
-text-align: center;
-padding-bottom: 30px;
-}
-.chat-title {
-color: white;
-font-size: 18px;
-margin-top: 8px;
-margin-bottom: 5px;
-}
-.chat-subtitle {
-color: #d8cdd3;
-font-size: 10px;
-margin-bottom: 17px;
-}
-.chat-image {
-display: block;
-width: 100%;
-max-width: 500px;
-height: auto;
-margin: auto;
-border-radius: 16px;
-box-shadow:
-0 15px 40px
-rgba(0, 0, 0, 0.4);
-}
-.return-button {
-margin-top: 17px;
-padding:
-9px
-19px;
-border: none;
-border-radius: 22px;
-background: white;
-color: #735766;
-font-family:
-"Segoe Print",
-"Bradley Hand",
-"Comic Sans MS",
-cursive;
-font-size: 11px;
-font-weight: 600;
-cursor: pointer;
-transition:
-0.2s ease;
-}
-.return-button:hover {
-transform:
-translateY(-2px);
-}
-@keyframes fadeIn {
-from {
-opacity: 0;
-}
-to {
-opacity: 1;
-}
-}
-@keyframes fadeUp {
-from {
-opacity: 0;
-transform: translateY(10px);
-}
-to {
-opacity: 1;
-transform: translateY(0);
-}
-}
-@media (max-width: 600px) {
-.page {
-padding:
-23px
-13px
-35px;
-}
-.container {
-max-width: 430px;
-}
-.header {
-margin-bottom: 15px;
-}
-.header h1 {
-font-size: 23px;
-}
-.header p {
-font-size: 10px;
-}
-.memory-card {
-min-height: 315px;
-padding:
-21px
-17px;
-border-radius: 23px;
-}
-.memory-icon {
-width: 60px;
-height: 60px;
-font-size: 31px;
-}
-.memory-card h2 {
-font-size: 19px;
-}
-.memory-text {
-font-size: 11px;
-line-height: 1.8;
-}
-.background-icon {
-opacity: 0.4;
-}
-.calendar {
-left: 2%;
-font-size: 31px;
-}
-.flower {
-right: 2%;
-font-size: 27px;
-}
-.chat {
-left: 1%;
-font-size: 28px;
-}
-.heart {
-left: 2%;
-font-size: 27px;
-}
-.star {
-right: 2%;
-font-size: 25px;
-}
-.flower-two {
-right: 2%;
-font-size: 22px;
-}
-.page4-portal {
-margin-top: 24px;
-min-height: 175px;
-padding-top: 22px;
-}
-.portal-message {
-font-size: 14px;
-}
-.love-portal {
-width: 76px;
-height: 76px;
-margin-top: 20px;
-}
-.portal-heart {
-width: 50px;
-height: 50px;
-font-size: 31px;
-}
-.portal-ring {
-width: 62px;
-height: 62px;
-}
-.portal-hint {
-font-size: 8px;
-margin-top: 10px;
-}
-.love-portal:hover .flower-one {
-transform:
-translate(-52px, -32px)
-rotate(-20deg);
-}
-.love-portal:hover .flower-two {
-transform:
-translate(38px, -38px)
-rotate(20deg);
-}
-.love-portal:hover .sparkle-one {
-transform:
-translate(-45px, 22px)
-scale(1.1);
-}
-.love-portal:hover .sparkle-two {
-transform:
-translate(43px, 21px)
-scale(0.9);
-}
-.love-portal:hover .sparkle-three {
-transform:
-translate(5px, -48px)
-scale(1.2);
-}
+@import url('https://fonts.googleapis.com/css2?family=Yaldevi:wght@400;500;600&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive;background:linear-gradient(135deg,#fff5f8,#fdf8ff,#fffaf3);color:#5c4a54;overflow-x:hidden}
+.background-icon{position:fixed;pointer-events:none;z-index:0;opacity:.65;user-select:none;animation:floatIcon 4s ease-in-out infinite}
+.calendar{font-size:42px;top:12%;left:7%;animation-delay:0s}
+.flower{font-size:34px;top:27%;right:7%;animation-delay:1s}
+.heart{font-size:34px;bottom:23%;left:6%;animation-delay:2s}
+.star{font-size:31px;bottom:12%;right:8%;animation-delay:1.5s}
+.chat{font-size:37px;top:47%;left:4%;animation-delay:2.5s}
+.flower-two{font-size:27px;top:65%;right:5%;animation-delay:.8s}
+@keyframes floatIcon{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-8px) rotate(4deg)}}
+.page{position:relative;z-index:1;min-height:100vh;display:flex;justify-content:center;padding:28px 15px 45px}
+.container{width:100%;max-width:500px;text-align:center}
+.header{margin-bottom:18px;animation:fadeDown .8s ease}
+.header-heart{display:inline-block;font-size:24px;animation:heartbeat 1.8s ease-in-out infinite}
+.header h1{margin-top:4px;font-size:25px;color:#624e59;font-weight:700}
+.header p{margin-top:4px;font-size:12px;color:#9a828d}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.16)}}
+.memory-card{width:100%;min-height:330px;padding:25px 20px;background:rgba(255,255,255,.91);border-radius:25px;border:1px solid rgba(255,255,255,.9);box-shadow:0 12px 32px rgba(120,82,104,.12);display:flex;flex-direction:column;justify-content:center;align-items:center;transition:opacity .3s ease,transform .3s ease}
+.memory-number{font-size:10px;letter-spacing:1.4px;color:#b28c9e;margin-bottom:10px}
+.memory-icon{width:66px;height:66px;display:flex;align-items:center;justify-content:center;border-radius:21px;background:linear-gradient(135deg,#fff0f5,#f7efff);font-size:35px;margin-bottom:12px;box-shadow:0 7px 18px rgba(181,131,157,.12);animation:iconPop .7s ease}
+@keyframes iconPop{0%{opacity:0;transform:scale(.75) rotate(-8deg)}70%{transform:scale(1.08) rotate(3deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+.memory-card h2{font-size:21px;color:#624d59;margin-bottom:9px}
+.date-box{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:18px;background:#fff1f6;color:#b16d87;font-size:12px;font-weight:600;margin-bottom:13px;box-shadow:0 4px 12px rgba(188,119,148,.08)}
+.date-calendar{font-size:15px;animation:littleBounce 2s ease-in-out infinite}
+@keyframes littleBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+.memory-text{max-width:370px;font-size:12px;line-height:1.8;color:#806d76}
+.placeholder{margin-top:10px;padding:8px 12px;max-width:350px;border-radius:13px;background:#faf5ff;border:1px dashed #d9c5e0;color:#957e9f;font-size:10px;line-height:1.5}
+.next-button{border:none;cursor:pointer;margin-top:19px;padding:10px 22px;border-radius:22px;background:linear-gradient(135deg,#f0a8c2,#c9a9eb);color:white;font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive;font-size:12px;font-weight:600;box-shadow:0 6px 16px rgba(188,126,157,.22);transition:transform .2s ease,box-shadow .2s ease}
+.next-button:hover{transform:translateY(-3px);box-shadow:0 9px 20px rgba(188,126,157,.28)}
+.next-button:active{transform:scale(.95)}
+.progress{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:13px}
+.dot{width:6px;height:6px;border-radius:50%;background:#e3d5dc;transition:all .3s ease}
+.dot.active{width:18px;border-radius:10px;background:#d99ab4}
+.final-message{display:none;padding:24px 18px;background:rgba(255,255,255,.91);border-radius:25px;box-shadow:0 12px 32px rgba(120,82,104,.12);animation:finalAppear .7s ease}
+.final-message.show{display:block}
+.final-icon{font-size:39px;margin-bottom:10px;animation:heartbeat 1.8s infinite}
+.final-message h2{font-size:20px;color:#624d59;margin-bottom:12px}
+.final-message p{max-width:380px;margin:auto;font-size:12px;line-height:1.8;color:#806d76}
+@keyframes finalAppear{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.cute-button{border:none;cursor:pointer;margin-top:17px;padding:9px 19px;border-radius:20px;background:#fff0f5;color:#a6657f;font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive;font-size:11px;font-weight:600;transition:.2s ease}
+.cute-button:hover{transform:translateY(-2px);background:#ffe7ef}
+.extra-section{margin-top:16px;padding:18px 17px;background:rgba(255,255,255,.88);border-radius:22px;box-shadow:0 9px 25px rgba(120,82,104,.08);animation:fadeUp .8s ease}
+.extra-section h3{font-size:17px;color:#66515c;margin-bottom:6px}
+.extra-section>p{font-size:11px;line-height:1.7;color:#907b85}
+.chat-button{margin-top:11px;padding:8px 17px;border:1px solid #efd6e0;border-radius:20px;background:#fff8fb;color:#a4657e;cursor:pointer;font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive;font-size:11px;font-weight:600;transition:.2s ease}
+.chat-button:hover{transform:translateY(-2px);background:#fff0f6}
+
+/* Only the Sinhala poem uses Yaldevi. Other fonts stay unchanged. */
+.poem{font-family:'Yaldevi',sans-serif;margin-top:11px;padding:14px;border-radius:16px;background:#fff8fc;border:1px dashed #e8cbd9;color:#876f7b;font-size:11px;line-height:2;position:relative}
+.poem::before{content:"🌸";position:absolute;top:-13px;left:18px;font-size:20px;animation:littleBounce 2s ease-in-out infinite}
+
+.page4-portal{position:relative;margin-top:28px;padding:25px 10px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:185px;overflow:visible}
+.portal-message{position:absolute;top:0;left:50%;transform:translate(-50%,8px) scale(.92);width:max-content;max-width:90%;opacity:0;color:#a45f7a;font-size:16px;font-weight:700;letter-spacing:.5px;text-shadow:0 3px 12px rgba(210,130,165,.18);pointer-events:none;transition:opacity .55s ease,transform .65s cubic-bezier(.22,.61,.36,1);z-index:5}
+.portal-message span{display:inline-block;margin-left:3px;animation:heartbeat 1.6s ease-in-out infinite}
+.love-portal:hover~.portal-message{opacity:1;transform:translate(-50%,0) scale(1)}
+.love-portal{position:relative;width:82px;height:82px;margin-top:23px;border:none;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;outline:none;transition:transform .45s cubic-bezier(.22,.61,.36,1)}
+.portal-ring{position:absolute;width:66px;height:66px;border-radius:50%;border:1px solid rgba(230,157,187,.48);box-shadow:0 0 0 7px rgba(240,184,207,.08),0 0 25px rgba(226,151,182,.2);transition:width .7s ease,height .7s ease,box-shadow .7s ease,border-color .7s ease}
+.portal-heart{position:relative;z-index:3;width:53px;height:53px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:linear-gradient(135deg,#ffdce9,#f3d9ff);color:#c87599;font-size:34px;line-height:1;box-shadow:0 9px 25px rgba(202,124,158,.2);transition:transform .55s cubic-bezier(.22,.61,.36,1),box-shadow .55s ease}
+.portal-hint{margin-top:12px;font-size:9px;color:#ae929f;letter-spacing:.3px;opacity:.85;transition:opacity .4s ease,transform .4s ease}
+.portal-flower{position:absolute;z-index:2;font-size:15px;opacity:0;pointer-events:none;transition:opacity .5s ease,transform .8s cubic-bezier(.22,.61,.36,1)}
+.flower-one{left:50%;top:50%;transform:translate(-50%,-50%) rotate(-15deg)}
+.flower-two{left:50%;top:50%;transform:translate(-50%,-50%) rotate(15deg)}
+.portal-sparkle{position:absolute;z-index:1;color:#d79ab5;font-size:17px;opacity:0;pointer-events:none;transition:opacity .5s ease,transform .9s cubic-bezier(.22,.61,.36,1)}
+.sparkle-one,.sparkle-two,.sparkle-three{left:50%;top:50%;transform:translate(-50%,-50%)}
+.love-portal:hover{transform:translateY(-6px) scale(1.04)}
+.love-portal:hover .portal-ring{width:82px;height:82px;border-color:rgba(226,143,177,.65);box-shadow:0 0 0 10px rgba(240,184,207,.07),0 0 40px rgba(226,143,177,.35)}
+.love-portal:hover .portal-heart{transform:scale(1.08) rotate(-5deg);box-shadow:0 12px 32px rgba(202,124,158,.3),0 0 24px rgba(242,174,204,.32)}
+.love-portal:hover .portal-flower{opacity:1}
+.love-portal:hover .flower-one{transform:translate(-65px,-37px) rotate(-20deg)}
+.love-portal:hover .flower-two{transform:translate(45px,-45px) rotate(20deg)}
+.love-portal:hover .sparkle-one{opacity:1;transform:translate(-45px,22px) scale(1.1)}
+.love-portal:hover .sparkle-two{opacity:1;transform:translate(43px,21px) scale(.9)}
+.love-portal:hover .sparkle-three{opacity:1;transform:translate(5px,-48px) scale(1.2)}
+.love-portal.leaving{pointer-events:none;animation:portalLeave .8s cubic-bezier(.22,.61,.36,1) forwards}
+.love-portal.leaving .portal-ring{animation:ringExpand .8s ease forwards}
+.love-portal.leaving .portal-heart{animation:heartFly .8s ease forwards}
+.page4-portal.leaving .portal-message{opacity:1;transform:translate(-50%,0) scale(1.05)}
+@keyframes portalLeave{0%{transform:scale(1);opacity:1}45%{transform:scale(1.12);opacity:1}100%{transform:scale(.35);opacity:0}}
+@keyframes ringExpand{0%{transform:scale(1);opacity:1}100%{transform:scale(2.2);opacity:0}}
+@keyframes heartFly{0%{transform:scale(1);opacity:1}50%{transform:scale(1.35);opacity:1}100%{transform:scale(.4);opacity:0}}
+.chat-viewer{display:none;position:fixed;inset:0;z-index:100;background:rgba(30,25,30,.93);padding:18px;overflow-y:auto;animation:fadeIn .3s ease}
+.chat-viewer.show{display:flex;justify-content:center;align-items:flex-start}
+.chat-content{width:100%;max-width:500px;text-align:center;padding-bottom:30px}
+.chat-title{color:white;font-size:18px;margin-top:8px;margin-bottom:5px}
+.chat-subtitle{color:#d8cdd3;font-size:10px;margin-bottom:17px}
+.chat-image{display:block;width:100%;max-width:500px;height:auto;margin:auto;border-radius:16px;box-shadow:0 15px 40px rgba(0,0,0,.4)}
+.return-button{margin-top:17px;padding:9px 19px;border:none;border-radius:22px;background:white;color:#735766;font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive;font-size:11px;font-weight:600;cursor:pointer;transition:.2s ease}
+.return-button:hover{transform:translateY(-2px)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){
+.page{padding:23px 13px 35px}
+.container{max-width:430px}
+.header{margin-bottom:15px}
+.header h1{font-size:23px}
+.header p{font-size:10px}
+.memory-card{min-height:315px;padding:21px 17px;border-radius:23px}
+.memory-icon{width:60px;height:60px;font-size:31px}
+.memory-card h2{font-size:19px}
+.memory-text{font-size:11px;line-height:1.8}
+.background-icon{opacity:.4}
+.calendar{left:2%;font-size:31px}
+.flower{right:2%;font-size:27px}
+.chat{left:1%;font-size:28px}
+.heart{left:2%;font-size:27px}
+.star{right:2%;font-size:25px}
+.flower-two{right:2%;font-size:22px}
+.page4-portal{margin-top:24px;min-height:175px;padding-top:22px}
+.portal-message{font-size:14px}
+.love-portal{width:76px;height:76px;margin-top:20px}
+.portal-heart{width:50px;height:50px;font-size:31px}
+.portal-ring{width:62px;height:62px}
+.portal-hint{font-size:8px;margin-top:10px}
+.love-portal:hover .flower-one{transform:translate(-52px,-32px) rotate(-20deg)}
+.love-portal:hover .flower-two{transform:translate(38px,-38px) rotate(20deg)}
+.love-portal:hover .sparkle-one{transform:translate(-45px,22px) scale(1.1)}
+.love-portal:hover .sparkle-two{transform:translate(43px,21px) scale(.9)}
+.love-portal:hover .sparkle-three{transform:translate(5px,-48px) scale(1.2)}
 }
 </style>
 </head>
 <body>
-<div class="background-icon calendar">
-🗓️
-</div>
-<div class="background-icon flower">
-🌸
-</div>
-<div class="background-icon heart">
-🤍
-</div>
-<div class="background-icon star">
-✨
-</div>
-<div class="background-icon chat">
-💬
-</div>
-<div class="background-icon flower-two">
-🌷
-</div>
+<div class="background-icon calendar">🗓️</div>
+<div class="background-icon flower">🌸</div>
+<div class="background-icon heart">🤍</div>
+<div class="background-icon star">✨</div>
+<div class="background-icon chat">💬</div>
+<div class="background-icon flower-two">🌷</div>
+
 <div class="page">
 <div class="container">
 <div class="header">
-<div class="header-heart">
-♡
+<div class="header-heart">♡</div>
+<h1>Our Little Memories</h1>
+<p>A few first things I'll always remember, Kawya ♡</p>
 </div>
-<h1>
-Our Little Memories
-</h1>
-<p>
-A few first things I'll always remember, Kawya ♡
-</p>
-</div>
-<div
-class="memory-card"
-id="memoryCard"
->
-<div
-class="memory-number"
-id="memoryNumber"
->
-FIRST THING 1 OF 4
-</div>
-<div
-class="memory-icon"
-id="memoryIcon"
->
-💬
-</div>
-<h2 id="memoryTitle">
-Our First Chat
-</h2>
+
+<div class="memory-card" id="memoryCard">
+<div class="memory-number" id="memoryNumber">FIRST THING 1 OF 4</div>
+<div class="memory-icon" id="memoryIcon">💬</div>
+<h2 id="memoryTitle">Our First Chat</h2>
 <div class="date-box">
-<span class="date-calendar">
-🗓️
-</span>
-<span id="memoryDate">
-09 December 2025
-</span>
+<span class="date-calendar">🗓️</span>
+<span id="memoryDate">09 December 2025</span>
 </div>
-<p
-class="memory-text"
-id="memoryText"
->
-The day our little conversation started.
-It was your birthday, and somehow that day became
-the beginning of one of my favourite memories. ♡
-</p>
-<div
-class="placeholder"
-id="placeholder"
-style="display:none;"
->
-Placeholder — I'll add the real memory here later. ♡
+<p class="memory-text" id="memoryText">The day our little conversation started. It was your birthday, and somehow that day became the beginning of one of my favourite memories. ♡</p>
+<div class="placeholder" id="placeholder" style="display:none;">Placeholder — I'll add the real memory here later. ♡</div>
+<button class="next-button" id="nextButton" onclick="nextMemory()">Next Memory ♡</button>
 </div>
-<button
-class="next-button"
-id="nextButton"
-onclick="nextMemory()"
->
-Next Memory ♡
-</button>
-</div>
-<div
-class="progress"
-id="progress"
->
+
+<div class="progress" id="progress">
 <div class="dot active"></div>
 <div class="dot"></div>
 <div class="dot"></div>
 <div class="dot"></div>
 </div>
-<div
-class="final-message"
-id="finalMessage"
->
-<div class="final-icon">
-💗
+
+<div class="final-message" id="finalMessage">
+<div class="final-icon">💗</div>
+<h2>And these are our first things...</h2>
+<p>These are our first things. We have to make many more memories, so we'll make them. I'm always with you, Sudu Noona. ♡</p>
+<button class="cute-button" onclick="restartMemories()">↶ See Them Again</button>
 </div>
-<h2>
-And these are our first things...
-</h2>
-<p>
-These are our first things.
-We have to make many more memories,
-so we'll make them.
-I'm always with you, Sudu Noona. ♡
-</p>
-<button
-class="cute-button"
-onclick="restartMemories()"
->
-↶ See Them Again
-</button>
-</div>
+
 <div class="extra-section">
-<h3>
-💌 A Little Piece of Our Beginning
-</h3>
-<p>
-Our very first WhatsApp chat started on
-<b>09 December 2025</b> — your birthday. ♡
-</p>
-<button
-class="chat-button"
-onclick="openChat()"
->
-💬 Open Our First Chat
-</button>
+<h3>💌 A Little Piece of Our Beginning</h3>
+<p>Our very first WhatsApp chat started on <b>09 December 2025</b> — your birthday. ♡</p>
+<button class="chat-button" onclick="openChat()">💬 Open Our First Chat</button>
 </div>
+
 <div class="extra-section">
-<h3>
-🌸 A Little Poem
-</h3>
-<p>
-A little poem for you ♡
-</p>
+<h3>🌸 A Little Poem</h3>
+<p>A little poem for you ♡</p>
 <div class="poem">
 වැස්සකි නුඹ හැමදාමත් මා සීතල කල...♡<br>
 සුලඟකි නුඹ රෑ මැදියම මා හද සිප ගත...♡<br>
@@ -1125,66 +188,32 @@ A little poem for you ♡
 ආදරියේ නුඹ ලැබුනේ මට පෙර පිනකි මා කල...♡<br>
 </div>
 </div>
+
 <div class="page4-portal" id="page4Portal">
-<div class="portal-message">
-I LOVE U KAW <span>♡</span>
-</div>
-<button
-class="love-portal"
-onclick="goToPage4()"
-aria-label="Open the final surprise"
->
+<div class="portal-message">I LOVE U KAW <span>♡</span></div>
+<button class="love-portal" onclick="goToPage4()" aria-label="Open the final surprise">
 <span class="portal-ring"></span>
-<span class="portal-heart">
-♡
-</span>
-<span class="portal-flower flower-one">
-✿
-</span>
-<span class="portal-flower flower-two">
-✿
-</span>
-<span class="portal-sparkle sparkle-one">
-✦
-</span>
-<span class="portal-sparkle sparkle-two">
-✧
-</span>
-<span class="portal-sparkle sparkle-three">
-·
-</span>
+<span class="portal-heart">♡</span>
+<span class="portal-flower flower-one">✿</span>
+<span class="portal-flower flower-two">✿</span>
+<span class="portal-sparkle sparkle-one">✦</span>
+<span class="portal-sparkle sparkle-two">✧</span>
+<span class="portal-sparkle sparkle-three">·</span>
 </button>
-<div class="portal-hint">
-there's one more little surprise... ♡
+<div class="portal-hint">there's one more little surprise... ♡</div>
 </div>
 </div>
 </div>
-</div>
-<div
-class="chat-viewer"
-id="chatViewer"
->
+
+<div class="chat-viewer" id="chatViewer">
 <div class="chat-content">
-<div class="chat-title">
-💬 Our First Little Conversation
-</div>
-<div class="chat-subtitle">
-09 December 2025 —
-The beginning of our little chat ♡
-</div>
-<img
-src="first-whatsapp-chat.jpg"
-alt="Our first WhatsApp chat"
-class="chat-image"
->
-<button
-class="return-button"
-onclick="closeChat()"
->
-← Back to Our Memories
-</button>
+<div class="chat-title">💬 Our First Little Conversation</div>
+<div class="chat-subtitle">09 December 2025 — The beginning of our little chat ♡</div>
+<img src="first-whatsapp-chat.jpg" alt="Our first WhatsApp chat" class="chat-image">
+<button class="return-button" onclick="closeChat()">← Back to Our Memories</button>
 </div>
 </div>
+
 <script>
 const memories = [
 {
@@ -1223,136 +252,96 @@ text:
 "a memory I want to keep for a very long time. ♡"
 }
 ];
+
 let currentMemory = 0;
+
 function showMemory(index) {
 const memory = memories[index];
-const card =
-document.getElementById("memoryCard");
-const number =
-document.getElementById("memoryNumber");
-const icon =
-document.getElementById("memoryIcon");
-const title =
-document.getElementById("memoryTitle");
-const date =
-document.getElementById("memoryDate");
-const text =
-document.getElementById("memoryText");
-const placeholder =
-document.getElementById("placeholder");
+const card = document.getElementById("memoryCard");
+const number = document.getElementById("memoryNumber");
+const icon = document.getElementById("memoryIcon");
+const title = document.getElementById("memoryTitle");
+const date = document.getElementById("memoryDate");
+const text = document.getElementById("memoryText");
+const placeholder = document.getElementById("placeholder");
+
 card.style.opacity = "0";
-card.style.transform =
-"translateY(7px)";
+card.style.transform = "translateY(7px)";
+
 setTimeout(() => {
-number.textContent =
-"FIRST THING " +
-(index + 1) +
-" OF 4";
-icon.textContent =
-memory.icon;
-title.textContent =
-memory.title;
-date.textContent =
-memory.date;
-text.textContent =
-memory.text;
+number.textContent = "FIRST THING " + (index + 1) + " OF 4";
+icon.textContent = memory.icon;
+title.textContent = memory.title;
+date.textContent = memory.date;
+text.textContent = memory.text;
+
 if (memory.placeholder) {
-placeholder.style.display =
-"block";
+placeholder.style.display = "block";
 } else {
-placeholder.style.display =
-"none";
+placeholder.style.display = "none";
 }
+
 icon.style.animation = "none";
 void icon.offsetWidth;
-icon.style.animation =
-"iconPop 0.7s ease";
+icon.style.animation = "iconPop 0.7s ease";
 card.style.opacity = "1";
-card.style.transform =
-"translateY(0)";
+card.style.transform = "translateY(0)";
 }, 180);
-const dots =
-document.querySelectorAll(".dot");
+
+const dots = document.querySelectorAll(".dot");
 dots.forEach((dot, i) => {
-dot.classList.toggle(
-"active",
-i === index
-);
+dot.classList.toggle("active", i === index);
 });
 }
+
 function nextMemory() {
-if (
-currentMemory <
-memories.length - 1
-) {
+if (currentMemory < memories.length - 1) {
 currentMemory++;
 showMemory(currentMemory);
-}
-else {
-document
-.getElementById("memoryCard")
-.style.display = "none";
-document
-.getElementById("progress")
-.style.display = "none";
-document
-.getElementById("finalMessage")
-.classList.add("show");
+} else {
+document.getElementById("memoryCard").style.display = "none";
+document.getElementById("progress").style.display = "none";
+document.getElementById("finalMessage").classList.add("show");
 }
 }
+
 function restartMemories() {
 currentMemory = 0;
-document
-.getElementById("memoryCard")
-.style.display = "flex";
-document
-.getElementById("progress")
-.style.display = "flex";
-document
-.getElementById("finalMessage")
-.classList.remove("show");
+document.getElementById("memoryCard").style.display = "flex";
+document.getElementById("progress").style.display = "flex";
+document.getElementById("finalMessage").classList.remove("show");
 showMemory(0);
-window.scrollTo({
-top: 0,
-behavior: "smooth"
-});
+window.scrollTo({top: 0, behavior: "smooth"});
 }
+
 function openChat() {
-document
-.getElementById("chatViewer")
-.classList.add("show");
-document.body.style.overflow =
-"hidden";
+document.getElementById("chatViewer").classList.add("show");
+document.body.style.overflow = "hidden";
 }
+
 function closeChat() {
-document
-.getElementById("chatViewer")
-.classList.remove("show");
-document.body.style.overflow =
-"";
+document.getElementById("chatViewer").classList.remove("show");
+document.body.style.overflow = "";
 }
+
 function goToPage4() {
-const portal =
-document.getElementById("page4Portal");
-const message =
-document.querySelector(".portal-message");
+const portal = document.getElementById("page4Portal");
+const message = document.querySelector(".portal-message");
 message.style.opacity = "1";
-message.style.transform =
-"translate(-50%, 0) scale(1.05)";
+message.style.transform = "translate(-50%, 0) scale(1.05)";
 portal.classList.add("leaving");
+
 setTimeout(() => {
-window.location.href =
-"mwah.html";
+window.location.href = "mwah.html";
 }, 800);
 }
-document.addEventListener(
-"keydown",
-function(event) {
+
+document.addEventListener("keydown", function(event) {
 if (event.key === "Escape") {
 closeChat();
 }
-}
-);
+});
+
 showMemory(0);
 </script>
 </body>
