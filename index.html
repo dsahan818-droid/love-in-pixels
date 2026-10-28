@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Kawya ♡</title>
+<title>Happy Birthday Kaw ♡</title>
 
 <style>
 
@@ -315,6 +315,9 @@ body {
 }
 
 
+
+
+   
 /* =========================================================
    CAKE CARD
 ========================================================= */
@@ -1725,6 +1728,39 @@ body {
 
 }
 
+
+/* ===== CURSOR BUBBLE EFFECT ===== */
+
+.cursor-dot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    background: #d96b88;
+
+    pointer-events: none;
+    z-index: 9999;
+
+    opacity: 0.45;
+    transform: translate(-50%, -50%);
+
+    animation: cursorFade 0.6s ease-out forwards;
+}
+
+@keyframes cursorFade {
+    from {
+        opacity: 0.45;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+
 </style>
 
 </head>
@@ -1783,7 +1819,7 @@ body {
         </div>
 
         <h1>
-            Happy Birthday, Kawya
+            Happy Birthday, Sudu Nona
         </h1>
 
         <p>
@@ -2598,6 +2634,8 @@ function createCelebration() {
 }
 
 
+   
+
 /* =========================================================
    SECRET BUTTON
 ========================================================= */
@@ -2633,6 +2671,7 @@ function openSecret() {
 }
 
 
+
 /* =========================================================
    INITIALIZE
 ========================================================= */
@@ -2641,6 +2680,54 @@ createCandles();
 
 updateStatus();
 
+
+/* ===== CURSOR BUBBLE EFFECT ===== */
+
+let lastCursorTime = 0;
+
+document.addEventListener("mousemove", function(event) {
+    const now = Date.now();
+
+    // Limit the number of bubbles created
+    if (now - lastCursorTime < 60) {
+        return;
+    }
+
+    lastCursorTime = now;
+
+    const dot = document.createElement("div");
+    dot.className = "cursor-dot";
+
+    dot.style.left = event.clientX + "px";
+    dot.style.top = event.clientY + "px";
+
+    document.body.appendChild(dot);
+
+    // Remove the bubble after the animation
+    setTimeout(() => dot.remove(), 600);
+});
+
+
+/* ===== TOUCH EFFECT FOR MOBILE ===== */
+
+document.addEventListener("touchmove", function(event) {
+    const touch = event.touches[0];
+
+    if (!touch) return;
+
+    const dot = document.createElement("div");
+    dot.className = "cursor-dot";
+
+    dot.style.left = touch.clientX + "px";
+    dot.style.top = touch.clientY + "px";
+
+    document.body.appendChild(dot);
+
+    setTimeout(() => dot.remove(), 600);
+
+}, { passive: true });
+
+   
 </script>
 
 </body>
