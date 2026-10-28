@@ -1632,6 +1632,58 @@ body {
 
 }
 
+/* ================================
+   CURSOR TRAIL
+================================ */
+
+.cursor-dot {
+
+    position: fixed;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--main);
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    opacity: .45;
+
+    transform:
+        translate(-50%,-50%);
+
+    animation:
+        cursorFade .6s ease-out forwards;
+}
+
+
+@keyframes cursorFade {
+
+    from {
+
+        opacity: .45;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+    }
+
+    to {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(0);
+    }
+
+}
+   
+   
 
 /* =========================================================
    MOBILE
@@ -2647,6 +2699,61 @@ createCandles();
 
 updateStatus();
 
+/* ================================
+   TOUCH TRAIL
+================================ */
+
+document.addEventListener(
+    "touchmove",
+    function(event) {
+
+
+        const touch =
+            event.touches[0];
+
+
+        if (!touch) {
+
+            return;
+
+        }
+
+
+        const dot =
+            document.createElement(
+                "div"
+            );
+
+
+        dot.className =
+            "cursor-dot";
+
+
+        dot.style.left =
+            touch.clientX + "px";
+
+
+        dot.style.top =
+            touch.clientY + "px";
+
+
+        document.body.appendChild(
+            dot
+        );
+
+
+        setTimeout(
+            () => dot.remove(),
+            600
+        );
+
+    },
+    {
+        passive: true
+    }
+);
+
+   
 </script>
 
 </body>
