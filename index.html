@@ -1,11 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Happy Birthday Kaw ♡</title>
 
 <style>
@@ -22,7 +21,6 @@
 
 body {
     min-height: 100vh;
-
     font-family:
         "Segoe Print",
         "Bradley Hand",
@@ -38,10 +36,8 @@ body {
         );
 
     color: #5c4a54;
-
     overflow-x: hidden;
 }
-
 
 /* =========================================================
    SOFT BACKGROUND
@@ -56,9 +52,7 @@ body {
     opacity: 0.28;
     pointer-events: none;
     z-index: 0;
-
-    animation:
-        softFloat 7s ease-in-out infinite;
+    animation: softFloat 7s ease-in-out infinite;
 }
 
 .glow-one {
@@ -84,7 +78,6 @@ body {
     }
 }
 
-
 /* =========================================================
    FLOATING DECORATIONS
 ========================================================= */
@@ -95,10 +88,7 @@ body {
     pointer-events: none;
     user-select: none;
     opacity: 0.58;
-
-    animation:
-        floatingDecoration 4.5s
-        ease-in-out infinite;
+    animation: floatingDecoration 4.5s ease-in-out infinite;
 }
 
 .decor-calendar {
@@ -130,18 +120,13 @@ body {
 
 @keyframes floatingDecoration {
     0%, 100% {
-        transform:
-            translateY(0)
-            rotate(-4deg);
+        transform: translateY(0) rotate(-4deg);
     }
 
     50% {
-        transform:
-            translateY(-9px)
-            rotate(4deg);
+        transform: translateY(-9px) rotate(4deg);
     }
 }
-
 
 /* =========================================================
    MAIN
@@ -153,11 +138,7 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-
-    padding:
-        25px
-        14px
-        35px;
+    padding: 25px 14px 35px;
 }
 
 .container {
@@ -166,24 +147,19 @@ body {
     text-align: center;
 }
 
-
 /* =========================================================
    HEADER
 ========================================================= */
 
 .header {
-    animation:
-        fadeDown 0.8s ease;
+    animation: fadeDown 0.8s ease;
 }
 
 .header-heart {
     display: inline-block;
     font-size: 23px;
     color: #d78ba8;
-
-    animation:
-        heartbeat 1.8s
-        ease-in-out infinite;
+    animation: heartbeat 1.8s ease-in-out infinite;
 }
 
 .header h1 {
@@ -222,7 +198,6 @@ body {
     }
 }
 
-
 /* =========================================================
    CAKE CARD
 ========================================================= */
@@ -230,49 +205,31 @@ body {
 .cake-card {
     position: relative;
     margin-top: 18px;
+    padding: 24px 18px 22px;
 
-    padding:
-        24px
-        18px
-        22px;
-
-    background:
-        rgba(255, 255, 255, 0.92);
-
+    background: rgba(255, 255, 255, 0.92);
     border-radius: 27px;
 
     box-shadow:
         0 14px 36px
         rgba(120, 82, 104, 0.12);
 
-    border:
-        1px solid
-        rgba(255,255,255,0.95);
-
+    border: 1px solid rgba(255,255,255,0.95);
     overflow: hidden;
-
-    animation:
-        cakeCardAppear 0.9s ease;
+    animation: cakeCardAppear 0.9s ease;
 }
 
 @keyframes cakeCardAppear {
     from {
         opacity: 0;
-
-        transform:
-            translateY(18px)
-            scale(0.97);
+        transform: translateY(18px) scale(0.97);
     }
 
     to {
         opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
+        transform: translateY(0) scale(1);
     }
 }
-
 
 /* =========================================================
    LITTLE TOP DECORATION
@@ -297,7 +254,6 @@ body {
     margin-bottom: 16px;
 }
 
-
 /* =========================================================
    CAKE STAGE
 ========================================================= */
@@ -306,14 +262,11 @@ body {
     position: relative;
     width: 100%;
     height: 300px;
-
     display: flex;
     align-items: flex-end;
     justify-content: center;
-
     overflow: visible;
 }
-
 
 /* =========================================================
    CAKE SHADOW
@@ -325,35 +278,22 @@ body {
     left: 50%;
     width: 285px;
     height: 25px;
-
     transform: translateX(-50%);
-
     border-radius: 50%;
-
-    background:
-        rgba(166, 125, 143, 0.12);
-
+    background: rgba(166, 125, 143, 0.12);
     filter: blur(5px);
-
-    animation:
-        shadowPulse 3s
-        ease-in-out infinite;
+    animation: shadowPulse 3s ease-in-out infinite;
 }
 
 @keyframes shadowPulse {
     0%, 100% {
-        transform:
-            translateX(-50%)
-            scaleX(1);
+        transform: translateX(-50%) scaleX(1);
     }
 
     50% {
-        transform:
-            translateX(-50%)
-            scaleX(1.04);
+        transform: translateX(-50%) scaleX(1.04);
     }
 }
-
 
 /* =========================================================
    CAKE
@@ -364,10 +304,7 @@ body {
     width: 270px;
     height: 190px;
     margin-bottom: 20px;
-
-    animation:
-        cakeFloat 4s
-        ease-in-out infinite;
+    animation: cakeFloat 4s ease-in-out infinite;
 }
 
 @keyframes cakeFloat {
@@ -380,7 +317,6 @@ body {
     }
 }
 
-
 /* =========================================================
    CAKE TOP
 ========================================================= */
@@ -391,11 +327,9 @@ body {
     top: 45px;
     width: 235px;
     height: 55px;
-
     transform: translateX(-50%);
 
-    border-radius:
-        50% 50% 18px 18px;
+    border-radius: 50% 50% 18px 18px;
 
     background:
         linear-gradient(
@@ -405,14 +339,11 @@ body {
         );
 
     box-shadow:
-        inset 0 -8px 0
-        rgba(219, 151, 177, 0.15),
-        0 8px 18px
-        rgba(170, 111, 137, 0.13);
+        inset 0 -8px 0 rgba(219, 151, 177, 0.15),
+        0 8px 18px rgba(170, 111, 137, 0.13);
 
     z-index: 4;
 }
-
 
 /* =========================================================
    CAKE FROSTING
@@ -424,14 +355,9 @@ body {
     top: 84px;
     width: 245px;
     height: 38px;
-
     transform: translateX(-50%);
-
-    border-radius:
-        18px 18px 25px 25px;
-
+    border-radius: 18px 18px 25px 25px;
     background: #fff6fa;
-
     z-index: 6;
 
     box-shadow:
@@ -443,10 +369,7 @@ body {
     position: absolute;
     width: 17px;
     height: 29px;
-
-    border-radius:
-        0 0 12px 12px;
-
+    border-radius: 0 0 12px 12px;
     background: #fff6fa;
 }
 
@@ -473,7 +396,6 @@ body {
     height: 27px;
 }
 
-
 /* =========================================================
    CAKE BODY
 ========================================================= */
@@ -484,11 +406,8 @@ body {
     top: 101px;
     width: 245px;
     height: 83px;
-
     transform: translateX(-50%);
-
-    border-radius:
-        8px 8px 22px 22px;
+    border-radius: 8px 8px 22px 22px;
 
     background:
         linear-gradient(
@@ -498,29 +417,20 @@ body {
         );
 
     box-shadow:
-        inset 0 -10px 0
-        rgba(201, 132, 160, 0.10),
-        0 8px 17px
-        rgba(170, 111, 137, 0.14);
+        inset 0 -10px 0 rgba(201, 132, 160, 0.10),
+        0 8px 17px rgba(170, 111, 137, 0.14);
 
     z-index: 3;
 }
-
-
-/* cake layers */
 
 .cake-layer {
     position: absolute;
     left: 50%;
     width: 228px;
     height: 9px;
-
     transform: translateX(-50%);
-
     border-radius: 50%;
-
-    background:
-        rgba(255, 246, 250, 0.68);
+    background: rgba(255, 246, 250, 0.68);
 }
 
 .layer-one {
@@ -530,7 +440,6 @@ body {
 .layer-two {
     top: 48px;
 }
-
 
 /* =========================================================
    LITTLE CAKE DECORATIONS
@@ -543,10 +452,7 @@ body {
     border-radius: 50%;
     background: #d79ab4;
     z-index: 8;
-
-    animation:
-        decorationTwinkle 2.5s
-        ease-in-out infinite;
+    animation: decorationTwinkle 2.5s ease-in-out infinite;
 }
 
 .dot-one {
@@ -584,7 +490,6 @@ body {
     }
 }
 
-
 /* =========================================================
    NUMBER 23
 ========================================================= */
@@ -592,12 +497,12 @@ body {
 .age-number {
     position: absolute;
     left: 50%;
-    top: 60px;
+
+    /* MOVED DOWN SLIGHTLY */
+    top: 82px;
 
     transform: translateX(-50%);
-
     z-index: 8;
-
     color: #c77f9d;
     font-size: 25px;
     font-weight: 700;
@@ -606,7 +511,6 @@ body {
         0 2px 8px
         rgba(197, 125, 154, 0.18);
 }
-
 
 /* =========================================================
    CANDLE AREA
@@ -618,17 +522,13 @@ body {
     top: 0;
     width: 220px;
     height: 80px;
-
     transform: translateX(-50%);
-
     z-index: 10;
-
     display: flex;
     justify-content: center;
     align-items: flex-end;
     gap: 3px;
 }
-
 
 /* =========================================================
    REUSABLE CANDLE
@@ -638,9 +538,7 @@ body {
     position: relative;
     width: 6px;
     height: 40px;
-
-    border-radius:
-        5px 5px 3px 3px;
+    border-radius: 5px 5px 3px 3px;
 
     background:
         linear-gradient(
@@ -654,12 +552,8 @@ body {
         0 2px 5px
         rgba(180, 119, 143, 0.16);
 
-    transform-origin:
-        bottom center;
-
-    animation:
-        candleSway 3s
-        ease-in-out infinite;
+    transform-origin: bottom center;
+    animation: candleSway 3s ease-in-out infinite;
 }
 
 .candle:nth-child(3n) {
@@ -684,7 +578,6 @@ body {
     }
 }
 
-
 /* =========================================================
    WICK
 ========================================================= */
@@ -695,13 +588,10 @@ body {
     top: -5px;
     width: 2px;
     height: 7px;
-
     transform: translateX(-50%);
-
     background: #6e5a60;
     border-radius: 2px;
 }
-
 
 /* =========================================================
    FLAME
@@ -713,11 +603,8 @@ body {
     top: -24px;
     width: 11px;
     height: 17px;
-
     transform: translateX(-50%);
-
-    border-radius:
-        50% 50% 50% 50%;
+    border-radius: 50% 50% 50% 50%;
 
     background:
         radial-gradient(
@@ -733,12 +620,8 @@ body {
             rgba(255, 184, 93, 0.65)
         );
 
-    animation:
-        flameDance .8s
-        ease-in-out infinite alternate;
-
-    transform-origin:
-        bottom center;
+    animation: flameDance .8s ease-in-out infinite alternate;
+    transform-origin: bottom center;
 
     transition:
         opacity .35s ease,
@@ -747,35 +630,23 @@ body {
 
 @keyframes flameDance {
     from {
-        transform:
-            translateX(-50%)
-            rotate(-4deg)
-            scaleY(1);
+        transform: translateX(-50%) rotate(-4deg) scaleY(1);
     }
 
     to {
-        transform:
-            translateX(-50%)
-            rotate(4deg)
-            scaleY(1.08);
+        transform: translateX(-50%) rotate(4deg) scaleY(1.08);
     }
 }
-
 
 /* extinguished candle */
 
 .candle.off {
-    animation:
-        candleOff .4s ease forwards;
+    animation: candleOff .4s ease forwards;
 }
 
 .candle.off .flame {
     opacity: 0;
-
-    transform:
-        translateX(-50%)
-        translateY(8px)
-        scale(0);
+    transform: translateX(-50%) translateY(8px) scale(0);
 }
 
 @keyframes candleOff {
@@ -784,18 +655,13 @@ body {
     }
 }
 
-
 /* =========================================================
    BLOW SYSTEM
 ========================================================= */
 
 .blow-box {
     margin-top: 3px;
-
-    padding:
-        12px
-        14px;
-
+    padding: 12px 14px;
     border-radius: 18px;
 
     background:
@@ -805,9 +671,7 @@ body {
             #faf5ff
         );
 
-    border:
-        1px solid
-        #f1dce5;
+    border: 1px solid #f1dce5;
 
     box-shadow:
         0 6px 18px
@@ -825,10 +689,7 @@ body {
     width: 100%;
     max-width: 250px;
     height: 5px;
-
-    margin:
-        8px auto 0;
-
+    margin: 8px auto 0;
     border-radius: 10px;
     background: #f0e4e9;
     overflow: hidden;
@@ -846,10 +707,8 @@ body {
             #cdb0ed
         );
 
-    transition:
-        width .15s ease;
+    transition: width .15s ease;
 }
-
 
 /* =========================================================
    BLOW BUTTON FALLBACK
@@ -875,6 +734,11 @@ body {
     opacity: 1;
 }
 
+/* NEW: HIDE THE FALLBACK AFTER ALL CANDLES ARE BLOWN */
+
+.cake-card.complete .wave-button {
+    display: none;
+}
 
 /* =========================================================
    BIRTHDAY MESSAGE
@@ -882,19 +746,13 @@ body {
 
 .birthday-message {
     margin-top: 17px;
-
-    padding:
-        12px
-        14px;
-
+    padding: 12px 14px;
     border-radius: 18px;
     background: #fff5f9;
     color: #886d79;
     font-size: 11px;
     line-height: 1.8;
-
-    animation:
-        softAppear .8s ease;
+    animation: softAppear .8s ease;
 }
 
 .birthday-message strong {
@@ -913,23 +771,18 @@ body {
     }
 }
 
-
 /* =========================================================
    ALL CANDLES BLOWN
 ========================================================= */
 
 .cake-card.complete .birthday-message {
-    animation:
-        celebrationAppear .9s ease;
+    animation: celebrationAppear .9s ease;
 }
 
 @keyframes celebrationAppear {
     0% {
         opacity: 0;
-
-        transform:
-            scale(.92)
-            translateY(10px);
+        transform: scale(.92) translateY(10px);
     }
 
     70% {
@@ -938,13 +791,9 @@ body {
 
     100% {
         opacity: 1;
-
-        transform:
-            scale(1)
-            translateY(0);
+        transform: scale(1) translateY(0);
     }
 }
-
 
 /* =========================================================
    SECRET AREA
@@ -952,15 +801,9 @@ body {
 
 .secret-area {
     margin-top: 20px;
-
-    padding:
-        14px
-        10px
-        8px;
-
+    padding: 14px 10px 8px;
     text-align: center;
 }
-
 
 /* hint */
 
@@ -969,10 +812,7 @@ body {
     color: #aa929d;
     line-height: 1.7;
     opacity: .8;
-
-    animation:
-        hintPulse 3s
-        ease-in-out infinite;
+    animation: hintPulse 3s ease-in-out infinite;
 }
 
 @keyframes hintPulse {
@@ -985,7 +825,6 @@ body {
     }
 }
 
-
 /* =========================================================
    SECRET BUTTON
 ========================================================= */
@@ -995,15 +834,12 @@ body {
     width: 64px;
     height: 64px;
     margin-top: 9px;
-
     border: none;
     background: transparent;
     cursor: pointer;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     -webkit-tap-highlight-color: transparent;
     outline: none;
 }
@@ -1013,10 +849,7 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-
-    background:
-        rgba(237, 186, 209, .18);
-
+    background: rgba(237, 186, 209, .18);
     filter: blur(7px);
 
     transition:
@@ -1029,11 +862,9 @@ body {
     z-index: 2;
     width: 43px;
     height: 43px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
 
     background:
@@ -1043,10 +874,7 @@ body {
             #f4eaff
         );
 
-    border:
-        1px solid
-        rgba(216, 158, 183, .35);
-
+    border: 1px solid rgba(216, 158, 183, .35);
     color: #c17c9b;
     font-size: 20px;
 
@@ -1055,8 +883,7 @@ body {
         rgba(192, 123, 153, .15);
 
     transition:
-        transform .5s
-        cubic-bezier(.22,.61,.36,1),
+        transform .5s cubic-bezier(.22,.61,.36,1),
         box-shadow .5s ease;
 }
 
@@ -1068,8 +895,7 @@ body {
 
     transition:
         opacity .4s ease,
-        transform .7s
-        cubic-bezier(.22,.61,.36,1);
+        transform .7s cubic-bezier(.22,.61,.36,1);
 }
 
 .secret-spark.one {
@@ -1088,15 +914,11 @@ body {
 }
 
 .secret-button:hover .secret-core {
-    transform:
-        scale(1.12)
-        rotate(-6deg);
+    transform: scale(1.12) rotate(-6deg);
 
     box-shadow:
-        0 10px 25px
-        rgba(192, 123, 153, .27),
-        0 0 20px
-        rgba(240, 181, 208, .28);
+        0 10px 25px rgba(192, 123, 153, .27),
+        0 0 20px rgba(240, 181, 208, .28);
 }
 
 .secret-button:hover .secret-glow {
@@ -1124,23 +946,17 @@ body {
     transform: scale(.9);
 }
 
-
 /* =========================================================
    SECRET OPEN ANIMATION
 ========================================================= */
 
 .secret-button.opening {
     pointer-events: none;
-
-    animation:
-        secretOpen .75s
-        ease forwards;
+    animation: secretOpen .75s ease forwards;
 }
 
 .secret-button.opening .secret-core {
-    animation:
-        secretCoreOpen .75s
-        ease forwards;
+    animation: secretCoreOpen .75s ease forwards;
 }
 
 @keyframes secretOpen {
@@ -1160,26 +976,19 @@ body {
 
 @keyframes secretCoreOpen {
     0% {
-        box-shadow:
-            0 7px 18px
-            rgba(192, 123, 153, .15);
+        box-shadow: 0 7px 18px rgba(192, 123, 153, .15);
     }
 
     50% {
         box-shadow:
-            0 0 0 18px
-            rgba(238, 181, 208, .12),
-            0 0 40px
-            rgba(238, 181, 208, .38);
+            0 0 0 18px rgba(238, 181, 208, .12),
+            0 0 40px rgba(238, 181, 208, .38);
     }
 
     100% {
-        box-shadow:
-            0 0 0 45px
-            rgba(238, 181, 208, 0);
+        box-shadow: 0 0 0 45px rgba(238, 181, 208, 0);
     }
 }
-
 
 /* =========================================================
    MOBILE
@@ -1188,10 +997,7 @@ body {
 @media (max-width: 600px) {
 
     .page {
-        padding:
-            21px
-            12px
-            30px;
+        padding: 21px 12px 30px;
     }
 
     .container {
@@ -1203,16 +1009,21 @@ body {
     }
 
     .cake-card {
-        padding:
-            21px
-            13px
-            19px;
-
+        padding: 21px 13px 19px;
         border-radius: 24px;
     }
 
     .cake-stage {
         height: 280px;
+    }
+
+    .cake {
+        transform: scale(.92);
+        transform-origin: bottom center;
+    }
+
+    .cake:hover {
+        transform: scale(.94) translateY(-3px);
     }
 
     .decor-calendar {
@@ -1236,122 +1047,66 @@ body {
     }
 }
 
-
-/* ===== ACCESSIBILITY & MOTION ===== */
-
-button:focus-visible {
-    outline: 2px solid #c77f9d;
-    outline-offset: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-    }
-
-    .cursor-dot {
-        display: none;
-    }
-}
-
-
 /* ===== CURSOR BUBBLE EFFECT ===== */
 
 .cursor-dot {
     position: fixed;
     width: 6px;
     height: 6px;
-
     border-radius: 50%;
     background: #d96b88;
-
     pointer-events: none;
     z-index: 9999;
-
     opacity: 0.45;
     transform: translate(-50%, -50%);
-
-    animation:
-        cursorFade 0.6s ease-out forwards;
+    animation: cursorFade 0.6s ease-out forwards;
 }
 
 @keyframes cursorFade {
     from {
         opacity: 0.45;
-        transform:
-            translate(-50%, -50%)
-            scale(1);
+        transform: translate(-50%, -50%) scale(1);
     }
 
     to {
         opacity: 0;
-        transform:
-            translate(-50%, -50%)
-            scale(0);
+        transform: translate(-50%, -50%) scale(0);
     }
 }
 
 </style>
-
 </head>
 
-
 <body>
-
 
 <!-- =========================================================
      SOFT BACKGROUND
 ========================================================= -->
 
-<div class="background-glow glow-one" aria-hidden="true"></div>
-
-<div class="background-glow glow-two" aria-hidden="true"></div>
-
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
 
 <!-- =========================================================
      DECORATIONS
 ========================================================= -->
 
-<div class="decor decor-calendar" aria-hidden="true">
-    🗓️
-</div>
-
-<div class="decor decor-flower" aria-hidden="true">
-    🌸
-</div>
-
-<div class="decor decor-heart" aria-hidden="true">
-    🤍
-</div>
-
-<div class="decor decor-star" aria-hidden="true">
-    ✨
-</div>
-
+<div class="decor decor-calendar">🗓️</div>
+<div class="decor decor-flower">🌸</div>
+<div class="decor decor-heart">🤍</div>
+<div class="decor decor-star">✨</div>
 
 <!-- =========================================================
      PAGE
 ========================================================= -->
 
 <div class="page">
-
 <div class="container">
 
-
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
+    <!-- HEADER -->
 
     <div class="header">
 
-        <div class="header-heart">
-            ♡
-        </div>
+        <div class="header-heart">♡</div>
 
         <h1>
             Happy Birthday, Sudu Nona
@@ -1363,44 +1118,29 @@ button:focus-visible {
 
     </div>
 
+    <!-- CAKE CARD -->
 
-    <!-- =====================================================
-         CAKE CARD
-    ====================================================== -->
-
-    <div
-        class="cake-card"
-        id="cakeCard"
-    >
-
+    <div class="cake-card" id="cakeCard">
 
         <div class="cake-top-text">
             A LITTLE BIRTHDAY SURPRISE
         </div>
 
-
         <div class="cake-title">
             Make a wish, Kawya ♡
         </div>
-
 
         <div class="cake-subtitle">
             23 little candles are waiting for you...
         </div>
 
-
-        <!-- =================================================
-             CAKE
-        ================================================== -->
+        <!-- CAKE -->
 
         <div class="cake-stage">
 
-
             <div class="cake-shadow"></div>
 
-
             <div class="cake">
-
 
                 <!-- CANDLES ARE CREATED BY JAVASCRIPT -->
 
@@ -1409,11 +1149,9 @@ button:focus-visible {
                     id="candleArea"
                 ></div>
 
-
                 <!-- CAKE TOP -->
 
                 <div class="cake-top"></div>
-
 
                 <!-- AGE -->
 
@@ -1421,65 +1159,47 @@ button:focus-visible {
                     23
                 </div>
 
-
                 <!-- FROSTING -->
 
                 <div class="frosting">
 
                     <div class="frost-drip drip-one"></div>
-
                     <div class="frost-drip drip-two"></div>
-
                     <div class="frost-drip drip-three"></div>
-
                     <div class="frost-drip drip-four"></div>
 
                 </div>
-
 
                 <!-- BODY -->
 
                 <div class="cake-body">
 
                     <div class="cake-layer layer-one"></div>
-
                     <div class="cake-layer layer-two"></div>
 
                 </div>
 
-
                 <!-- DECORATIONS -->
 
                 <div class="cake-dot dot-one"></div>
-
                 <div class="cake-dot dot-two"></div>
-
                 <div class="cake-dot dot-three"></div>
-
                 <div class="cake-dot dot-four"></div>
-
 
             </div>
 
         </div>
 
-
-        <!-- =================================================
-             BLOW SYSTEM
-        ================================================== -->
+        <!-- BLOW SYSTEM -->
 
         <div class="blow-box">
-
 
             <div
                 class="blow-status"
                 id="blowStatus"
-                role="status"
-                aria-live="polite"
             >
                 🌬️ Take a little breath... then blow toward the microphone.
             </div>
-
 
             <div class="blow-meter">
 
@@ -1490,27 +1210,22 @@ button:focus-visible {
 
             </div>
 
-
             <button
                 class="wave-button"
                 id="waveButton"
-                type="button"
                 onclick="manualBlow()"
             >
                 ✨ Or gently tap here if your microphone isn't available
             </button>
 
-
         </div>
 
+        <!-- MESSAGE -->
 
-        <!-- =================================================
-             MESSAGE
-        ================================================== -->
-
-        <div class="birthday-message">
+        <div class="birthday-message" id="birthdayMessage">
 
             🎂
+
             <strong>
                 Happy 23rd Birthday, Kawya!
             </strong>
@@ -1522,16 +1237,11 @@ button:focus-visible {
 
         </div>
 
-
     </div>
 
-
-    <!-- =====================================================
-         SECRET AREA
-    ====================================================== -->
+    <!-- SECRET AREA -->
 
     <div class="secret-area">
-
 
         <div class="secret-hint">
 
@@ -1541,36 +1251,28 @@ button:focus-visible {
 
         </div>
 
-
-        <!-- =================================================
-             SECRET BUTTON
-        ================================================== -->
+        <!-- SECRET BUTTON -->
 
         <button
             class="secret-button"
             id="secretButton"
-            type="button"
             onclick="openSecret()"
             aria-label="Secret surprise"
         >
 
             <span class="secret-glow"></span>
 
-
             <span class="secret-core">
                 ♡
             </span>
-
 
             <span class="secret-spark one">
                 ✦
             </span>
 
-
             <span class="secret-spark two">
                 ✧
             </span>
-
 
             <span class="secret-spark three">
                 ·
@@ -1578,14 +1280,10 @@ button:focus-visible {
 
         </button>
 
-
     </div>
 
-
 </div>
-
 </div>
-
 
 <script>
 
@@ -1593,296 +1291,322 @@ button:focus-visible {
    CANDLE SYSTEM
 ========================================================= */
 
-/*
-   IMPORTANT:
-
-   This system is reusable.
-
-   Change this number later if you want
-   a different number of candles.
-*/
-
 const CANDLE_COUNT = 23;
 
 let blownCandles = 0;
 let microphoneStarted = false;
-let microphoneStarting = false;
 let audioContext = null;
 let analyser = null;
 let microphoneStream = null;
 let blowingCooldown = false;
-let blowCurrentlyDetected = false;
-let animationFrameId = null;
-let birthdayFinished = false;
-
 
 /* =========================================================
    CREATE CANDLES
 ========================================================= */
 
 function createCandles() {
-    const candleArea = document.getElementById("candleArea");
+
+    const candleArea =
+        document.getElementById("candleArea");
+
     candleArea.innerHTML = "";
 
-    for (let i = 0; i < CANDLE_COUNT; i++) {
-        const candle = document.createElement("div");
+    for (
+        let i = 0;
+        i < CANDLE_COUNT;
+        i++
+    ) {
+
+        const candle =
+            document.createElement("div");
+
         candle.className = "candle";
 
-        const wick = document.createElement("div");
+        const wick =
+            document.createElement("div");
+
         wick.className = "wick";
 
-        const flame = document.createElement("div");
+        const flame =
+            document.createElement("div");
+
         flame.className = "flame";
 
         candle.appendChild(wick);
         candle.appendChild(flame);
-        candleArea.appendChild(candle);
-    }
-}
 
+        candleArea.appendChild(candle);
+
+    }
+
+}
 
 /* =========================================================
    BLOW ONE CANDLE
 ========================================================= */
 
 function blowNextCandle() {
-    if (birthdayFinished) return;
 
-    const candles = document.querySelectorAll(".candle:not(.off)");
+    const candles =
+        document.querySelectorAll(".candle:not(.off)");
 
     if (candles.length === 0) {
         finishBirthday();
         return;
     }
 
-    const candle = candles[candles.length - 1];
+    const candle =
+        candles[candles.length - 1];
+
     candle.classList.add("off");
 
     blownCandles++;
+
     updateStatus();
 
-    if (blownCandles >= CANDLE_COUNT) {
-        setTimeout(finishBirthday, 500);
-    }
-}
+    if (
+        blownCandles >=
+        CANDLE_COUNT
+    ) {
 
+        setTimeout(
+            finishBirthday,
+            500
+        );
+
+    }
+
+}
 
 /* =========================================================
    UPDATE STATUS
 ========================================================= */
 
 function updateStatus() {
-    const status = document.getElementById("blowStatus");
-    const meter = document.getElementById("blowMeter");
 
-    const percentage = Math.round((blownCandles / CANDLE_COUNT) * 100);
-    meter.style.width = percentage + "%";
+    const status =
+        document.getElementById("blowStatus");
 
-    if (birthdayFinished) return;
+    const meter =
+        document.getElementById("blowMeter");
+
+    const percentage =
+        Math.round(
+            (blownCandles / CANDLE_COUNT) * 100
+        );
+
+    meter.style.width =
+        percentage + "%";
 
     if (blownCandles === 0) {
+
         status.textContent =
             "🌬️ Take a little breath... then blow toward the microphone.";
-    } else if (blownCandles < CANDLE_COUNT) {
+
+    }
+
+    else if (
+        blownCandles < CANDLE_COUNT
+    ) {
+
         status.textContent =
-            "✨ " + (CANDLE_COUNT - blownCandles) +
+            "✨ " +
+            (CANDLE_COUNT - blownCandles) +
             " little flames are still glowing...";
+
     }
+
 }
-
-
-/* =========================================================
-   STOP MICROPHONE CLEANLY
-========================================================= */
-
-function stopMicrophone() {
-    if (animationFrameId !== null) {
-        cancelAnimationFrame(animationFrameId);
-        animationFrameId = null;
-    }
-
-    if (microphoneStream) {
-        microphoneStream.getTracks().forEach(track => track.stop());
-        microphoneStream = null;
-    }
-
-    if (audioContext && audioContext.state !== "closed") {
-        audioContext.close().catch(() => {});
-    }
-
-    audioContext = null;
-    analyser = null;
-    microphoneStarted = false;
-}
-
 
 /* =========================================================
    FINISH
 ========================================================= */
 
 function finishBirthday() {
-    if (birthdayFinished) return;
 
-    birthdayFinished = true;
-    stopMicrophone();
+    const card =
+        document.getElementById("cakeCard");
 
-    const card = document.getElementById("cakeCard");
     card.classList.add("complete");
 
-    document.getElementById("blowStatus").textContent =
-        "🌷 All the little candles are asleep... may every wish in your heart bloom into something beautiful. Keep smiling, birthday girl. ♡";
+    document.getElementById(
+        "blowStatus"
+    ).textContent =
+        "🎉 You did it! Make your birthday wish, Kawya. ♡";
 
-    document.getElementById("blowMeter").style.width = "100%";
+    /* NEW: CHANGE THE BIRTHDAY MESSAGE */
 
-    // Hide the microphone fallback once the birthday candles are finished.
-    const waveButton = document.getElementById("waveButton");
-    if (waveButton) {
-        waveButton.style.display = "none";
-    }
+    document.getElementById(
+        "birthdayMessage"
+    ).innerHTML =
+        '🌸 <strong>Happy 23rd Birthday, Kawya!</strong><br>' +
+        'May this year bring you endless smiles, sweet little moments, ' +
+        'and all the happiness your heart can hold. You deserve every ' +
+        'beautiful thing. ♡';
+
+    document.getElementById(
+        "blowMeter"
+    ).style.width = "100%";
 
     createCelebration();
-}
 
+}
 
 /* =========================================================
    MICROPHONE SYSTEM
 ========================================================= */
 
 async function startMicrophone() {
-    if (microphoneStarted || microphoneStarting || birthdayFinished) {
+
+    if (microphoneStarted) {
         return;
     }
 
-    if (!navigator.mediaDevices ||
-        !navigator.mediaDevices.getUserMedia) {
+    if (
+        !navigator.mediaDevices ||
+        !navigator.mediaDevices.getUserMedia
+    ) {
+
         showMicrophoneFallback();
         return;
+
     }
 
-    microphoneStarting = true;
-
     try {
-        microphoneStream = await navigator.mediaDevices.getUserMedia({
-            audio: {
-                echoCancellation: true,
-                noiseSuppression: true,
-                autoGainControl: true
-            }
-        });
 
-        const AudioContextClass =
-            window.AudioContext || window.webkitAudioContext;
+        microphoneStream =
+            await navigator.mediaDevices.getUserMedia({
+                audio: true
+            });
 
-        if (!AudioContextClass) {
-            throw new Error("Web Audio API is not supported.");
-        }
+        audioContext =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
 
-        audioContext = new AudioContextClass();
+        analyser =
+            audioContext.createAnalyser();
 
-        if (audioContext.state === "suspended") {
-            await audioContext.resume();
-        }
-
-        analyser = audioContext.createAnalyser();
         analyser.fftSize = 512;
         analyser.smoothingTimeConstant = 0.65;
 
         const microphone =
-            audioContext.createMediaStreamSource(microphoneStream);
+            audioContext.createMediaStreamSource(
+                microphoneStream
+            );
 
         microphone.connect(analyser);
 
         microphoneStarted = true;
 
-        if (!birthdayFinished) {
-            document.getElementById("blowStatus").textContent =
-                "🎤 Microphone ready — gently blow toward it!";
-            listenForBlow();
-        } else {
-            stopMicrophone();
-        }
+        document.getElementById(
+            "blowStatus"
+        ).textContent =
+            "🎤 Microphone ready — gently blow toward it!";
 
-    } catch (error) {
-        stopMicrophone();
-        showMicrophoneFallback();
-    } finally {
-        microphoneStarting = false;
+        listenForBlow();
+
     }
-}
 
+    catch (error) {
+
+        showMicrophoneFallback();
+
+    }
+
+}
 
 /* =========================================================
    LISTEN FOR BLOW
 ========================================================= */
 
 function listenForBlow() {
-    if (!analyser || birthdayFinished) return;
 
-    const data = new Uint8Array(analyser.fftSize);
+    if (!analyser) {
+        return;
+    }
+
+    const data =
+        new Uint8Array(analyser.fftSize);
 
     function checkSound() {
-        if (!analyser || birthdayFinished) return;
 
         analyser.getByteTimeDomainData(data);
 
         let total = 0;
 
-        for (let i = 0; i < data.length; i++) {
-            const value = (data[i] - 128) / 128;
+        for (
+            let i = 0;
+            i < data.length;
+            i++
+        ) {
+
+            const value =
+                (data[i] - 128) / 128;
+
             total += value * value;
+
         }
 
-        const volume = Math.sqrt(total / data.length);
-        const strength = Math.min(100, volume * 700);
+        const volume =
+            Math.sqrt(total / data.length);
 
-        // Show microphone activity without replacing the candle progress
-        // when the microphone is quiet.
-        if (blownCandles < CANDLE_COUNT) {
-            document.getElementById("blowMeter").style.width =
-                Math.min(100, strength) + "%";
-        }
+        const strength =
+            Math.min(100, volume * 700);
+
+        document.getElementById(
+            "blowMeter"
+        ).style.width =
+            Math.min(100, strength) + "%";
 
         /*
-         * Count one candle for each separate puff.
-         * A continuous sound cannot accidentally extinguish all candles.
-         * The sound must fall below the reset threshold before another
-         * puff can be counted.
-         */
+           A sustained louder sound
+           counts as a blow.
+        */
 
-        if (strength > 18 && !blowCurrentlyDetected && !blowingCooldown) {
-            blowCurrentlyDetected = true;
+        if (
+            strength > 18 &&
+            !blowingCooldown
+        ) {
+
             blowingCooldown = true;
+
             blowNextCandle();
 
-            setTimeout(() => {
-                blowingCooldown = false;
-            }, 350);
+            setTimeout(
+                () => {
+                    blowingCooldown = false;
+                },
+                260
+            );
+
         }
 
-        if (strength < 10) {
-            blowCurrentlyDetected = false;
+        if (blownCandles < CANDLE_COUNT) {
+
+            requestAnimationFrame(checkSound);
+
         }
 
-        if (blownCandles < CANDLE_COUNT && !birthdayFinished) {
-            animationFrameId = requestAnimationFrame(checkSound);
-        }
     }
 
     checkSound();
-}
 
+}
 
 /* =========================================================
    MICROPHONE FALLBACK
 ========================================================= */
 
 function showMicrophoneFallback() {
-    if (birthdayFinished) return;
 
-    document.getElementById("blowStatus").textContent =
+    document.getElementById(
+        "blowStatus"
+    ).textContent =
         "✨ Your microphone isn't available. You can gently tap the little hint below instead. ♡";
-}
 
+}
 
 /* =========================================================
    MANUAL BLOW FALLBACK
@@ -1890,10 +1614,7 @@ function showMicrophoneFallback() {
 
 function manualBlow() {
 
-    if (
-        blownCandles >=
-        CANDLE_COUNT
-    ) {
+    if (blownCandles >= CANDLE_COUNT) {
         return;
     }
 
@@ -1906,24 +1627,28 @@ function manualBlow() {
 
 }
 
-
 /* =========================================================
-   START MICROPHONE AFTER A NON-BUTTON USER INTERACTION
+   START MICROPHONE WHEN USER INTERACTS
 ========================================================= */
 
-function handleFirstPageInteraction(event) {
-    // Tapping the manual fallback or secret button should not unexpectedly
-    // open a microphone permission prompt.
-    if (event.target.closest("button, a, input, textarea, select")) {
-        return;
+document.addEventListener(
+    "pointerdown",
+    function() {
+
+        if (
+            !microphoneStarted &&
+            blownCandles < CANDLE_COUNT
+        ) {
+
+            startMicrophone();
+
+        }
+
+    },
+    {
+        once: true
     }
-
-    document.removeEventListener("pointerdown", handleFirstPageInteraction);
-    startMicrophone();
-}
-
-document.addEventListener("pointerdown", handleFirstPageInteraction);
-
+);
 
 /* =========================================================
    CELEBRATION
@@ -1953,59 +1678,40 @@ function createCelebration() {
         item.textContent =
             symbols[
                 Math.floor(
-                    Math.random() *
-                    symbols.length
+                    Math.random() * symbols.length
                 )
             ];
 
-        item.style.position =
-            "fixed";
+        item.style.position = "fixed";
 
         item.style.left =
-            (50 +
-                (Math.random() - .5) *
-                60) + "%";
+            (50 + (Math.random() - .5) * 60) + "%";
 
-        item.style.top =
-            "48%";
-
-        item.style.zIndex =
-            "20";
-
-        item.style.pointerEvents =
-            "none";
+        item.style.top = "48%";
+        item.style.zIndex = "20";
+        item.style.pointerEvents = "none";
 
         item.style.fontSize =
-            (10 +
-                Math.random() *
-                13) + "px";
+            (10 + Math.random() * 13) + "px";
 
-        item.style.color =
-            "#d28eaa";
+        item.style.color = "#d28eaa";
 
-        document.body.appendChild(
-            item
-        );
+        document.body.appendChild(item);
 
         const x =
-            (Math.random() - .5) *
-            240;
+            (Math.random() - .5) * 240;
 
         const y =
-            -(80 +
-                Math.random() *
-                180);
+            -(80 + Math.random() * 180);
 
         item.animate(
             [
                 {
-                    transform:
-                        "translate(-50%,0) scale(.7)",
+                    transform: "translate(-50%,0) scale(.7)",
                     opacity: 0
                 },
                 {
-                    transform:
-                        "translate(-50%,-30px) scale(1)",
+                    transform: "translate(-50%,-30px) scale(1)",
                     opacity: 1
                 },
                 {
@@ -2015,13 +1721,8 @@ function createCelebration() {
                 }
             ],
             {
-                duration:
-                    1500 +
-                    Math.random() *
-                    900,
-
-                easing:
-                    "cubic-bezier(.22,.61,.36,1)"
+                duration: 1500 + Math.random() * 900,
+                easing: "cubic-bezier(.22,.61,.36,1)"
             }
         );
 
@@ -2036,7 +1737,6 @@ function createCelebration() {
 
 }
 
-
 /* =========================================================
    SECRET BUTTON
 ========================================================= */
@@ -2044,13 +1744,9 @@ function createCelebration() {
 function openSecret() {
 
     const button =
-        document.getElementById(
-            "secretButton"
-        );
+        document.getElementById("secretButton");
 
-    button.classList.add(
-        "opening"
-    );
+    button.classList.add("opening");
 
     /*
        The secret door opens
@@ -2069,49 +1765,62 @@ function openSecret() {
 
 }
 
-
 /* =========================================================
    INITIALIZE
 ========================================================= */
 
 createCandles();
-
 updateStatus();
 
-
-/* ===== CURSOR / TOUCH BUBBLE EFFECT ===== */
+/* ===== CURSOR BUBBLE EFFECT ===== */
 
 let lastCursorTime = 0;
 
-function createCursorBubble(x, y) {
+document.addEventListener("mousemove", function(event) {
+
     const now = Date.now();
 
-    if (now - lastCursorTime < 60) return;
+    // Limit the number of bubbles created
+    if (now - lastCursorTime < 60) {
+        return;
+    }
+
     lastCursorTime = now;
 
     const dot = document.createElement("div");
     dot.className = "cursor-dot";
-    dot.style.left = x + "px";
-    dot.style.top = y + "px";
+
+    dot.style.left = event.clientX + "px";
+    dot.style.top = event.clientY + "px";
 
     document.body.appendChild(dot);
-    setTimeout(() => dot.remove(), 600);
-}
 
-document.addEventListener("pointermove", function(event) {
-    if (event.pointerType !== "mouse") return;
-    createCursorBubble(event.clientX, event.clientY);
+    // Remove the bubble after the animation
+    setTimeout(() => dot.remove(), 600);
+
 });
 
+/* ===== TOUCH EFFECT FOR MOBILE ===== */
+
 document.addEventListener("touchmove", function(event) {
+
     const touch = event.touches[0];
+
     if (!touch) return;
 
-    createCursorBubble(touch.clientX, touch.clientY);
+    const dot = document.createElement("div");
+    dot.className = "cursor-dot";
+
+    dot.style.left = touch.clientX + "px";
+    dot.style.top = touch.clientY + "px";
+
+    document.body.appendChild(dot);
+
+    setTimeout(() => dot.remove(), 600);
+
 }, { passive: true });
 
 </script>
 
 </body>
-
 </html>
