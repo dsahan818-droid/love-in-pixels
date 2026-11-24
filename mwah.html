@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -680,27 +681,6 @@
                 transform: translateY(-3px);
             }
         }
-
-
-        /* =========================================
-           OUR FIRST CHAT
-        ========================================= */
-
-        function openChat() {
-            document.getElementById("chatViewer").classList.add("show");
-            document.body.style.overflow = "hidden";
-        }
-
-        function closeChat() {
-            document.getElementById("chatViewer").classList.remove("show");
-            document.body.style.overflow = "";
-        }
-
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape") {
-                closeChat();
-            }
-        });
 
 
         /* =========================================
@@ -2135,7 +2115,15 @@
             src="first-whatsapp-chat.jpg"
             alt="Our first WhatsApp chat"
             class="chat-image"
+            onerror="this.style.display='none'; document.getElementById('chatImageFallback').style.display='block';"
         >
+
+        <p
+            id="chatImageFallback"
+            style="display:none; color:#f5eaf0; font-size:12px; line-height:1.8; margin:18px auto;"
+        >
+            Add your screenshot named <b>first-whatsapp-chat.jpg</b> to the same folder as mwah.html. ♡
+        </p>
 
 
         <button
@@ -2152,6 +2140,40 @@
 </div>
 
     <script>
+        /* =========================================
+           OUR FIRST CHAT
+        ========================================= */
+
+        function openChat() {
+            const chatViewer = document.getElementById("chatViewer");
+
+            if (!chatViewer) {
+                console.error("The first-chat viewer could not be found.");
+                return;
+            }
+
+            chatViewer.classList.add("show");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeChat() {
+            const chatViewer = document.getElementById("chatViewer");
+
+            if (!chatViewer) {
+                return;
+            }
+
+            chatViewer.classList.remove("show");
+            document.body.style.overflow = "";
+        }
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeChat();
+            }
+        });
+
+
         /* =========================================
            PHOTO GALLERY
         ========================================= */
@@ -2607,5 +2629,7 @@
 </body>
 
 </html>
+
+
 
 
